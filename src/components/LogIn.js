@@ -2,6 +2,11 @@
 
 export default function Login() {
 
+function findUser(){
+    
+}
+
+
 return (
     <div>
         <h2>Log in form</h2>
@@ -16,6 +21,8 @@ return (
                 <label>Password</label>
                 <input></input>
             </div>
+
+            <button onClick={findUser}>Log in</button>
         </form>
     </div>
 
