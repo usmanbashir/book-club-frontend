@@ -21,10 +21,19 @@ export default function SignUp() {
 
     function submitNewUser(e){
         e.preventDefault();
-        console.log(newUser);
+        // console.log(newUser);
         createUser(newUser)
-            .then((user) => user.json())
-            .catch((error) => (error + "It didnt work*********"))
+            // .then((user) => user.json())
+            // // .then((data) => {
+            // //     console.log("PRACTICE")})
+            // .catch((error) => console.log(error))
+        setNewUser({
+            username:"", 
+            firstname: "", 
+            lastname: "",
+            email: "",
+            password: ""
+        })
     }
 
 return(
@@ -39,6 +48,7 @@ return(
                     name='username'
                     value={newUser.username}
                     onChange={handleInput} 
+                    autoComplete="off"
                 />
             </div>
 
@@ -47,7 +57,9 @@ return(
                 <input 
                     name='firstname'
                     value={newUser.firstname}
-                    onChange={handleInput} />
+                    onChange={handleInput} 
+                    autoComplete="off"            
+                />
             </div>
 
             <div>
@@ -56,6 +68,7 @@ return(
                     name='lastname'
                     value={newUser.lastname}
                     onChange={handleInput}
+                    autoComplete="off"
                 />
             </div>
             
@@ -65,6 +78,7 @@ return(
                     name='email'
                     value={newUser.email}
                     onChange={handleInput}
+                    autoComplete="off"
                 />
             </div>
 
