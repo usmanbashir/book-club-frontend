@@ -1,8 +1,8 @@
 
-import EachBook from './EachBook'
 import { getAllBooks } from '../apis/BookApis'
 import { useEffect, useState } from "react"
 import "../App.css"
+import EachBookDetails from './EachBookDetails'
 
 export default function Home() {
 
@@ -35,7 +35,8 @@ return(
 
     <div> 
         <h2>All books</h2>
-        {books.map((book, index) => <EachBook book={book} key={index} />)}
+        {books.map((book, index) => <EachBookDetails 
+                book={book} key={book.id} index={index} />)}
     </div>
 
     </>

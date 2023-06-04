@@ -25,7 +25,8 @@ export default function SignUp() {
         createUser(newUser)
             // .then((user) => user.json())
             // // .then((data) => {
-            // //     console.log("PRACTICE")})
+            // //     console.log("PRACTICE")}
+            // // )
             // .catch((error) => console.log(error))
         setNewUser({
             username:"", 

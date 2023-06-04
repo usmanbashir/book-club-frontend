@@ -22,5 +22,19 @@ console.log(newUser)
       .catch((error) => console.log(`This is the error: ${error}`))
 
   // return response.data
+}
 
+export const createUserToken = (userInfo) => {
+  
+  const userDetails = JSON.stringify({"user": {
+    "email": `${userInfo.email}`,
+    "password": `${userInfo.password}`
+  }})
+  // console.log(userDetails)
+    const response = axiosInstance.post(`http://localhost:4000/login`, userDetails, {
+      headers: {"Content-Type": "application/json"}})
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(`This is the error: ${error}`))
+    
+    // return response.data
 }

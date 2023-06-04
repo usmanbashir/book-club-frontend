@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import SignUp from './components/SignUp';
 import Login from './components/LogIn';
 import Vip from './components/Vip';
+import BookPage from './components/BookPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/LogIn" element={<Login />} />
         <Route path="/vip" element={<Vip />} />
+        <Route path="/books/:id" element={<BookPage />} />
       </Routes>
 
     </div>

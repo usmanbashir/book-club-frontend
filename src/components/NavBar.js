@@ -14,7 +14,8 @@ export default function NavBar() {
         &nbsp; | &nbsp;
         <Link to="/vip">VIP</Link>
         &nbsp; | &nbsp;
-
+        {/* <Link to="/books/:id">BOOK</Link> */}
+        &nbsp; | &nbsp;
         </div>
     )
 }
