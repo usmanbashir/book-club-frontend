@@ -8,6 +8,7 @@ export default function Home() {
 
 const [books, setBooks] = useState([])
 
+//  Get all books via Book APIs and save to above state variable.
 useEffect(() => {
     getAllBooks()
     .then(books => books.json())
@@ -35,8 +36,9 @@ return(
 
     <div> 
         <h2>All books</h2>
+        {/* Map over all outputs from above call. */}
         {books.map((book, index) => <EachBookDetails 
-                book={book} key={book.id} index={index} />)}
+                book={book.book} key={book.id} index={index} />)}
     </div>
 
     </>

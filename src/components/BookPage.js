@@ -6,15 +6,18 @@ export default function BookPage() {
 
 const [ singleBook, setSingleBook ] = useState({})
 
+// Get book id from url param.
 const { id } = useParams()
-console.log(id)
+// console.log(id)
 
 const getBook = () => {
+    // Call book id to get individual book details using book id. 
     getOneBook(id)
     .then((book) => book.json())
     .then((data) => {
+        // Set above state to hold book details. 
         setSingleBook(data)
-        console.log(data)
+        // console.log(data)
     })
 }
 
