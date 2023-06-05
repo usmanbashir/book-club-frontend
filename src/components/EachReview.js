@@ -1,9 +1,17 @@
 
 
-export default function EachReview() {
+export default function EachReview(props) {
 
-    return(
+    const review = props;
 
-        
+    console.log(review)
+    return (
+        <>
+            <div className="eachReview">
+                <div></div>
+
+            </div>
+        </>
+
     )
 }

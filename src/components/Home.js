@@ -3,7 +3,6 @@ import { getAllBooks } from '../apis/BookApis'
 import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
-import Logout from './Logout'
 
 export default function Home() {
 

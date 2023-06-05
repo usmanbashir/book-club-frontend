@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getOneBook } from "../apis/BookApis"
 import { useParams, useNavigate } from "react-router-dom"
 import { getReviews } from "../apis/ReviewApis"
+import EachReview from "./EachReview"
 
 export default function BookPage() {
 
@@ -29,11 +30,13 @@ const bookReviews = () => {
     .then(review => {
         setReviewList(review)
         console.log("FIRST CLOG ** " + review)
-        console.log("SECOND CLOG ***  " + reviewList)})
+        console.log("SECOND CLOG ***  " + reviewList)        
+    })
      .catch((error) => console.log(error))
+console.log("THIRD CLOG ****  " + reviewList)
 }
 
-
+ 
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
@@ -51,7 +54,8 @@ useEffect(() => {
         <div>Date: {singleBook.meeting_date}</div>
         <div>Location: {singleBook.meeting_location}</div>
 
-
+        {/* {reviewList.map((review, index) => 
+        <EachReview review={review} /> )} */}
         </>
     )
 }
