@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "../App.css"
+import Logout from "./Logout";
 
-export default function NavBar() {
+export default function NavBar(props) {
+
+    const isUserLoggedIn = props;
 
     return (
         <div className="NavBar">
@@ -16,6 +19,9 @@ export default function NavBar() {
         &nbsp; | &nbsp;
         {/* <Link to="/books/:id">BOOK</Link> */}
         &nbsp; | &nbsp;
+        {isUserLoggedIn && <Logout />}
+        &nbsp; | &nbsp;
+
         </div>
     )
 }

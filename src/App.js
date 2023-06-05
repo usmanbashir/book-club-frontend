@@ -26,7 +26,7 @@ function isLoggedIn(){
       <h1>Hello readers</h1>
 
       <div className='NavBar'>
-           <NavBar />  </div>
+           <NavBar isUserLoggedIn={isUserLoggedIn} />  </div>
 
       <Routes>
         <Route path="/Home" element={<Home />} />
