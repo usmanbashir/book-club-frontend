@@ -1,19 +1,19 @@
 import { useEffect } from "react"
-import { storeToken } from "../apis/UserApis"
+import { getToken } from "../apis/UserApis"
 
 export default function Vip() {
 
-    // const token = storeToken
+    // const token = getToken
 
 useEffect(() => {
-    // storeToken()
+    getToken()
 }, [])
 
 return(
     <>
      <h1>VIP area</h1>
 
-    {/* {token &&
+    {/* {getToken &&
         <h2>You're in!</h2>
     } */}
 </>

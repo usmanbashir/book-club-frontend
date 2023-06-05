@@ -36,6 +36,7 @@ export const createUserToken = (userInfo) => {
       // console.log(response.headers)
       .then((response) => {
         if (response.headers.authorization){
+          console.log(response)
           localStorage.setItem("token", response.headers.authorization)
         }
       })
@@ -45,14 +46,18 @@ export const createUserToken = (userInfo) => {
 
 export const getToken = localStorage.getItem("token")
 
-export const removeUserToken = (getToken) => {
-
-  const response = axiosInstance.delete(`/logout`, {
-    headers: { "Content-Type": "application/json",
-                "Authorization": localStorage.getItem("token") }})
-    // console.log(response.headers)
+export const removeUserToken = () => {
+// Call the destroy session controller using the 
+// saved token which was created when user signed in. 
+  const response = axiosInstance.delete(`http://localhost:4000/logout`, {
+            headers: { "Content-Type": "application/json",
+                        // "Authorization": localStorage.getItem("token") }})
+                        "Authorization": localStorage.getItem("token") 
+                      }})
     .then((response) => console.log(response))
+  // Remove the token from local storage. 
+  localStorage.removeItem("token")
 
-    return response.data
+  // return response.data
 }
 
