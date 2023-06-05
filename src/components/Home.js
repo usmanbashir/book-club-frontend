@@ -3,6 +3,7 @@ import { getAllBooks } from '../apis/BookApis'
 import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
+import Logout from './Logout'
 
 export default function Home() {
 
@@ -22,6 +23,8 @@ useEffect(() => {
 return(
     <>
 
+    {/* <Logout /> */}
+
         {/* <div>Current book</div>
         <div>New book</div> */}
     <div className='Lorem'>
@@ -38,7 +41,7 @@ return(
         <h2>All books</h2>
         {/* Map over all outputs from above call. */}
         {books.map((book, index) => <EachBookDetails 
-                book={book.book} key={book.id} index={index} />)}
+                book={book} key={book.id} index={index} />)}
     </div>
 
     </>

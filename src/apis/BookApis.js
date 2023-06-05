@@ -11,3 +11,8 @@ export const getAllBooks = () => {
 export const getOneBook = (id) => {
     return fetch (`http://localhost:4000/books/${id}`)
 }
+
+export const createOneBook = () => {
+    return fetch (`http://localhost:4000/books`)
+}
+

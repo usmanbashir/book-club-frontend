@@ -21,8 +21,8 @@ console.log(newUser)
       .then((response) => console.log(response))
       .catch((error) => console.log(`This is the error: ${error}`))
 
-  // return response.data
 }
+
 
 export const createUserToken = (userInfo) => {
   
@@ -33,8 +33,16 @@ export const createUserToken = (userInfo) => {
   // console.log(userDetails)
     const response = axiosInstance.post(`http://localhost:4000/login`, userDetails, {
       headers: {"Content-Type": "application/json"}})
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(`This is the error: ${error}`))
-    
-    // return response.data
+      // console.log(response.headers)
+      .then((response) => {
+        if (response.headers.authorization){
+          // storeToken(response.headers.authorization)
+          localStorage.setItem("token", JSON.stringify(response.headers.authorization))
+        }
+      })
+
+      // .catch((error) => console.log(`This is the error: ${error}`))
 }
+
+
+

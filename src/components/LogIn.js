@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import { createUserToken } from "../apis/UserApis"
+import Logout from './Logout'
+
 
 export default function Login() {
 
@@ -8,25 +10,21 @@ export default function Login() {
         password: ""
     })
 
+
 function handleInput(e){
     setUser({...user, [e.target.name]: e.target.value})
 }
 
 function findUser(e){
     e.preventDefault()
-
     createUserToken(user)
-    // .then((response) => response.json())
-    // .then((token) => {
-    //     console.log(`SUCCESS ${token} ***********`)
-    // }
-    // )
-    // .then((response) => console.log(response))
+    console.log(user)
 }
-
 
 return (
     <div>
+            <Logout />
+
         <h2>Log in form</h2>
 
         <form>
