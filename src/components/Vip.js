@@ -1,21 +1,24 @@
-import { useEffect } from "react"
-import { getToken } from "../apis/UserApis"
+// import { useState } from "react"
+// import { getToken } from "../apis/UserApis"
 
-export default function Vip() {
+// export default function Vip() {
 
-    // const token = getToken
 
-useEffect(() => {
-    getToken()
-}, [])
+// const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
 
-return(
-    <>
-     <h1>VIP area</h1>
+// function isLoggedIn(){
+//     const getToken = localStorage.getItem("token")
+//     console.log(getToken)
+//     if (getToken){
+//         setIsUserLoggedIn(true)
+//     }
+// }
 
-    {/* {getToken &&
-        <h2>You're in!</h2>
-    } */}
-</>
-)
-}
+// return(
+//     <>
+//      <h1>VIP area</h1>
+
+//     {!isUserLoggedIn && <h2>You're in!</h2>}
+// </>
+// )
+// }

@@ -7,8 +7,20 @@ import SignUp from './components/SignUp';
 import Login from './components/LogIn';
 import Vip from './components/Vip';
 import BookPage from './components/BookPage';
+import { getToken } from "./apis/UserApis"
 
 function App() {
+
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
+
+function isLoggedIn(){
+    const getToken = localStorage.getItem("token")
+    console.log(getToken)
+    if (getToken){
+        setIsUserLoggedIn(true)
+    }
+}
+
   return (
     <div>
       <h1>Hello readers</h1>
