@@ -1,11 +1,12 @@
 import { storeToken } from "../apis/UserApis"
-
+import { getToken, removeUserToken } from "../apis/UserApis"
 
 export default function Logout () {
     
 function logUserOut() {
     console.log("GOODBYEEEEEE *********")
-    // console.log(storeToken)
+    // console.log(getToken)
+    removeUserToken()
 }
     return(
 

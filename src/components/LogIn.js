@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { createUserToken } from "../apis/UserApis"
 import Logout from './Logout'
-
+import { getToken } from "../apis/UserApis"
 
 export default function Login() {
 
@@ -20,6 +20,7 @@ function findUser(e){
     createUserToken(user)
     console.log(user)
 }
+
 
 return (
     <div>

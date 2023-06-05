@@ -36,13 +36,23 @@ export const createUserToken = (userInfo) => {
       // console.log(response.headers)
       .then((response) => {
         if (response.headers.authorization){
-          // storeToken(response.headers.authorization)
-          localStorage.setItem("token", JSON.stringify(response.headers.authorization))
+          localStorage.setItem("token", response.headers.authorization)
         }
       })
-
-      // .catch((error) => console.log(`This is the error: ${error}`))
+      .catch((error) => console.log(`This is the error: ${error}`))
 }
 
 
+export const getToken = localStorage.getItem("token")
+
+export const removeUserToken = (getToken) => {
+
+  const response = axiosInstance.delete(`/logout`, {
+    headers: { "Content-Type": "application/json",
+                "Authorization": localStorage.getItem("token") }})
+    // console.log(response.headers)
+    .then((response) => console.log(response))
+
+    return response.data
+}
 
