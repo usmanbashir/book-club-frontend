@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { getOneBook, editOneBook } from "../apis/BookApis"
-import { useParams, useNavigate } from "react-router-dom"
+import { getOneBook, editOneBook, deleteBook } from "../apis/BookApis"
+import { useParams, useNavigate, Navigate } from "react-router-dom"
 import { getReviews } from "../apis/ReviewApis"
 import EachReview from "./EachReview"
 
@@ -14,6 +14,7 @@ const [ reviewList, setReviewList ] = useState([])
 // Get book id from url param.
 const { id } = useParams()
 // console.log(id)
+const navigate = useNavigate()
 
 const getBook = () => {
     // Call book id to get individual book details using book id. 
@@ -46,7 +47,7 @@ useEffect(() => {
     console.log("*****HOW MANY TIMES ******")
 }, [id])
 
-function handleInput(e){
+const handleInput = (e) => {
     setEditedBook({...editedBook, [e.target.name]: e.target.value})
     console.log(e.target.value)
 }
@@ -61,6 +62,12 @@ const submitEditBook = (e) => {
     setSingleBook(editedBook)
      
 }
+
+const deleteOneBook = () => {
+    deleteBook(id)
+    navigate("/home")
+}
+
 if (!reviewList.length) return "Theree's no data"
 
 
@@ -91,7 +98,7 @@ if (!reviewList.length) return "Theree's no data"
         <br></br>
 
         <h3>Delete book</h3>
-        <button>Delete book</button>
+        <button onClick={deleteOneBook}>Delete book</button>
 
         <br></br>
 

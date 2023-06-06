@@ -56,3 +56,12 @@ export const editOneBook = (bookInfo, id) => {
     })
     .then(response => console.log(JSON.stringify(response)))
 }
+
+export const deleteBook = (id) => {
+    const response = axiosInstance.delete(`http://localhost:4000/books/${id}`, {
+        headers: { "Content-Type": "application/json",
+        "Authorization": localStorage.getItem("token") 
+        }
+        // .then(response => console.log(response))
+    })
+}
