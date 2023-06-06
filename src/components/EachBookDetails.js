@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function EachBookDetails(props) {
     
-    const {book, isUserLoggedIn} = props;
+    const book = props;
     // console.log(book.id)
 
     return(

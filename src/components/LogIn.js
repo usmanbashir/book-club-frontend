@@ -3,13 +3,12 @@ import { createUserToken } from "../apis/UserApis"
 import { useNavigate } from "react-router";
 
 
-export default function Login(props) {
+export default function Login() {
 
     const [user, setUser] = useState({
         email: "",
         password: ""
     })
-    const {isUserLoggedIn, setIsUserLoggedIn} = props;
     const navigate = useNavigate()
 
 function handleInput(e){

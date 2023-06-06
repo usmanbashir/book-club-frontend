@@ -6,9 +6,7 @@ import "../App.css"
 import EachBookDetails from './EachBookDetails'
 import NewBook from './NewBook'
 
-export default function Home(props) {
-
-    const isUserLoggedIn = props;
+export default function Home() {
 
     const [books, setBooks] = useState([])
     // const [currentUserName, setCurrentUserName] = useState({})

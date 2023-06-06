@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import "../App.css"
 import Logout from "./Logout";
 
-export default function NavBar(props) {
-
-    const {isUserLoggedIn, setIsUserLoggedIn} = props;
+export default function NavBar() {
 
     return (
         <div className="NavBar">

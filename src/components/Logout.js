@@ -2,9 +2,8 @@
 import { removeUserToken } from "../apis/UserApis"
 import { useNavigate } from "react-router"
 
-export default function Logout (props) {
+export default function Logout () {
 
-    const {isUserLoggedIn, setIsUserLoggedIn} = props
     const navigate = useNavigate()
 
 function logUserOut() {

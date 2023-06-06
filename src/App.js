@@ -25,19 +25,13 @@ function App() {
     <div>
 
       <div className='NavBar'>
-           <NavBar isUserLoggedIn={isUserLoggedIn}
-                setIsUserLoggedIn={setIsUserLoggedIn}
-           />  </div>
+           <NavBar />  </div>
 
       <Routes>
-        <Route path="/Home" element={<Home
-                    isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/LogIn" element={<Login  
-                    isUserLoggedIn={isUserLoggedIn}
-                    setIsUserLoggedIn={setIsUserLoggedIn}/>} />
-        <Route path="/books/:id" element={<BookPage 
-                    isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/LogIn" element={<Login />} />
+        <Route path="/books/:id" element={<BookPage />} />
       </Routes>
 
     </div>

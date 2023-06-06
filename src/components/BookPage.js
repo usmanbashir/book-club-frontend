@@ -5,8 +5,7 @@ import { getReviews } from "../apis/ReviewApis"
 import EachReview from "./EachReview"
 import EditBookForm from "./EditBookForm"
 
-export default function BookPage(props) {
-const isUserLoggedIn = props;
+export default function BookPage() {
 
 const [ singleBook, setSingleBook ] = useState({})
 const [ editedBook, setEditedBook ] = useState({})
