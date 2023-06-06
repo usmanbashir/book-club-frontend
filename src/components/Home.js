@@ -23,6 +23,9 @@ useEffect(() => {
 
 }, [])
 
+const findUserName = () => {
+    getUser(parseInt(localStorage.setItem("currentUserId")))
+}
 
 return(
     <>
@@ -30,12 +33,14 @@ return(
 {!isUserLoggedIn ? 
     <h1>Hello readers</h1>
     :
-    <h1>Hello {getUser}</h1>
+    <h1>Heya {findUserName}</h1>
 }
 
-
-
-    <NewBook />
+{isUserLoggedIn ? 
+    <div className='AddBook'>
+        <NewBook />
+    </div>
+: null }
     
         {/* <div>Current book</div>
         <div>New book</div> */}

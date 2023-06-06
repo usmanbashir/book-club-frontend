@@ -45,6 +45,7 @@ return (
                 <label>Password</label>
                 <input
                     name='password'
+                    type='password'
                     value={user.password}
                     onChange={handleInput}
                     autoComplete="off"

@@ -84,6 +84,7 @@ return(
                 <label>Password</label>
                 <input                    
                     name='password'
+                    type='password'
                     value={newUser.password}
                     onChange={handleInput} 
                 />

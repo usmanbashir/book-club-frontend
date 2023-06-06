@@ -6,6 +6,12 @@ export default function NewBook() {
     // debugger;
     const navigate = useNavigate()
 
+    const [ addBookForm, setAddBookForm ] = useState(false)
+
+    const showForm = () => {
+        setAddBookForm(!addBookForm)
+    }
+
     const [ newBook, setNewBook ] = useState({
         title: "",
         author: "",
@@ -35,13 +41,15 @@ export default function NewBook() {
             meeting_location: "",
             // user_id: localStorage.getItem("currentUserId")
         })
+        setAddBookForm(false)
         navigate()
     }
 
     return (
     <>
-        <h3>New book</h3>
+        <button onClick={showForm}>Add a book</button>
 
+{addBookForm ? 
         <form>
             <div>
             <label>title</label>
@@ -109,6 +117,7 @@ export default function NewBook() {
                 submitNewBook(e)
             }}>Create book </button>
         </form>
+        : null} 
     </>
 
     )

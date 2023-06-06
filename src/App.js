@@ -11,13 +11,13 @@ function App() {
 
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
 
-function isLoggedIn(){
-    const getToken = localStorage.getItem("token")
-    // console.log(getToken)
-    if (getToken){
-        setIsUserLoggedIn(true)
-    }
-}
+  function isLoggedIn(){
+      const getToken = localStorage.getItem("token")
+      // console.log(getToken)
+      if (getToken){
+          setIsUserLoggedIn(true)
+      }
+  }
 
   return (
     <div>
