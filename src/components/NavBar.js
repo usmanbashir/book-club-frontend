@@ -11,22 +11,22 @@ export default function NavBar(props) {
         &nbsp; | &nbsp;
         <Link to="/Home">Home</Link>
         &nbsp; | &nbsp;
-        {!isUserLoggedIn && 
-            <Link to="/LogIn">Log In</Link>}
+        {!isUserLoggedIn ? 
+            <Link to="/LogIn">Log In</Link> : null}
             &nbsp; | &nbsp;
-            {!isUserLoggedIn && 
-            <Link to="/SignUp">Sign Up</Link>}
+            {!isUserLoggedIn ? 
+            <Link to="/SignUp">Sign Up</Link> : null}
             &nbsp; | &nbsp;
         
 
         {/* <Link to="/books/:id">BOOK</Link> */}
         &nbsp; | &nbsp;
-        {/* {isUserLoggedIn &&  */}
+        {isUserLoggedIn ? 
         <Logout 
                 isUserLoggedIn={isUserLoggedIn}
                 setIsUserLoggedIn={setIsUserLoggedIn}
                 />
-        {/* } */}
+        : null} 
         &nbsp; | &nbsp;
 
         </div>
