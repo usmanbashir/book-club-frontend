@@ -3,13 +3,17 @@ import { getOneBook, editOneBook, deleteBook } from "../apis/BookApis"
 import { useParams, useNavigate, Navigate } from "react-router-dom"
 import { getReviews } from "../apis/ReviewApis"
 import EachReview from "./EachReview"
+import EditBookForm from "./EditBookForm"
 
-export default function BookPage() {
+export default function BookPage(props) {
+const isUserLoggedIn = props;
 
 const [ singleBook, setSingleBook ] = useState({})
 const [ editedBook, setEditedBook ] = useState({})
 
 const [ reviewList, setReviewList ] = useState([])
+
+const [ showForm, setShowForm ] = useState(false)
 
 // Get book id from url param.
 const { id } = useParams()
@@ -47,29 +51,17 @@ useEffect(() => {
     console.log("*****HOW MANY TIMES ******")
 }, [id])
 
-const handleInput = (e) => {
-    setEditedBook({...editedBook, [e.target.name]: e.target.value})
-    console.log(e.target.value)
-}
-
-const submitEditBook = (e) => {
-    e.preventDefault()
-    // Send edited details over to patch API call
-    // as well as current book id. Update book with new info.
-    editOneBook(editedBook, id)
-    // console.log(editedBook, id)
-    // Update singleBook based on the newly updated book.
-    setSingleBook(editedBook)
-     
-}
 
 const deleteOneBook = () => {
     deleteBook(id)
     navigate("/home")
 }
 
-if (!reviewList.length) return "Theree's no data"
+const editFormBtn = () => {
+    setShowForm(!showForm)
+}
 
+if (!reviewList.length) return "Theree's no data"
 
 
     return (
@@ -98,78 +90,19 @@ if (!reviewList.length) return "Theree's no data"
         <br></br>
 
         <h3>Delete book</h3>
-        <button onClick={deleteOneBook}>Delete book</button>
+        <button onClick={deleteOneBook}>Delete</button>
 
         <br></br>
 
-<form>
-            <div>
-            <h3>Edit book</h3>
-            <label>title</label>
-            <input
-                name="title"
-                value={editedBook.title}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
+         <button onClick={editFormBtn}>Edit</button>
 
-            <div>
-            <label>author</label>
-            <input
-                name="author"
-                value={editedBook.author}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
+         {showForm ? <EditBookForm 
+         singleBook={singleBook}
+         editedBook={editedBook}
+         setEditedBook={setEditedBook}
+         id={id} />
+            : null}
 
-            <div>
-            <label>Genre</label>
-            <input
-                name="genre"
-                value={editedBook.genre}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Published:</label>
-            <input
-                type="date"
-                name="publishedOn"
-                value={editedBook.publishedOn}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Meeting date</label>
-            <input
-                type="date"
-                name="meeting_date"
-                value={editedBook.meeting_date}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Meeting Location</label>
-            <input
-                name="meeting_location"
-                value={editedBook.meeting_location}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <button onClick={(e) => {
-                submitEditBook(e)
-            }}>Update book</button>
-        </form> 
         </>
     )
 }

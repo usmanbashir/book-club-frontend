@@ -35,7 +35,8 @@ function isLoggedIn(){
         <Route path="/LogIn" element={<Login  
                     isUserLoggedIn={isUserLoggedIn}
                     setIsUserLoggedIn={setIsUserLoggedIn}/>} />
-        <Route path="/books/:id" element={<BookPage />} />
+        <Route path="/books/:id" element={<BookPage 
+                    isUserLoggedIn={isUserLoggedIn} />} />
       </Routes>
 
     </div>
