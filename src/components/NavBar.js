@@ -11,21 +11,26 @@ export default function NavBar(props) {
         &nbsp; | &nbsp;
         <Link to="/Home">Home</Link>
         &nbsp; | &nbsp;
-        {!isUserLoggedIn ? 
-            <Link to="/LogIn">Log In</Link> : null}
-            &nbsp; | &nbsp;
-            {!isUserLoggedIn ? 
-            <Link to="/SignUp">Sign Up</Link> : null}
-            &nbsp; | &nbsp;
+        <div className="LogInBtn">
+           {!localStorage.getItem("token") ? 
+            <Link to="/LogIn">Log In</Link> 
+            : null} 
+        </div>
+        <div className="SignUpBtn">
+            {!localStorage.getItem("token") ? 
+            <Link to="/SignUp">Sign Up</Link>
+            : null}
+        </div>
+
         
 
         {/* <Link to="/books/:id">BOOK</Link> */}
         &nbsp; | &nbsp;
-        {isUserLoggedIn ? 
+        {localStorage.getItem("token") ? 
         <Logout 
-                isUserLoggedIn={isUserLoggedIn}
-                setIsUserLoggedIn={setIsUserLoggedIn}
-                />
+            isUserLoggedIn={isUserLoggedIn}
+            setIsUserLoggedIn={setIsUserLoggedIn}
+        />
         : null} 
         &nbsp; | &nbsp;
 

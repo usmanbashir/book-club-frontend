@@ -11,6 +11,7 @@ export default function Home(props) {
     const isUserLoggedIn = props;
 
     const [books, setBooks] = useState([])
+    // const [currentUserName, setCurrentUserName] = useState({})
 
 //  Get all books via Book APIs and save to above state variable.
 useEffect(() => {
@@ -23,20 +24,33 @@ useEffect(() => {
 
 }, [])
 
-const findUserName = () => {
-    getUser(parseInt(localStorage.setItem("currentUserId")))
-}
+// const findUserName = () => {
+//     // console.log(localStorage.getItem("currentUserId"))
+//     getUser(parseInt(localStorage.getItem("currentUserId")))
+//     // .then(response => console.log(JSON.parse(response)))
+//     .then(data => setCurrentUserName(data))
+
+//     // console.log(currentUserName)
+// }
+
+// Check through books array for each date, looking for the largest date
+const findCurrentBook = books.reduce((a, b) => {
+    return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
+})
+
+// console.log(findCurrentBook)
 
 return(
     <>
-
-{!isUserLoggedIn ? 
-    <h1>Hello readers</h1>
+{/* <button onClick={findUserName}>Click</button> */}
+{!localStorage.getItem("token") ? 
+    <h1>Hello Readers</h1>
     :
-    <h1>Heya {findUserName}</h1>
+    <h1>Hello again</h1>
 }
 
-{isUserLoggedIn ? 
+{/* If user is logged in, show new book button */}
+{!localStorage.getItem("token") ? 
     <div className='AddBook'>
         <NewBook />
     </div>

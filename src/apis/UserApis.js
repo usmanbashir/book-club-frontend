@@ -1,34 +1,34 @@
 import axios from 'axios';
 import axiosInstance from './AxiosInstance';
 
-export const getUser = (id) => {
-  // return fetch(`localhost:4000/users/${id}`)
-  const response = axiosInstance.get(`localhost:4000/users/${id}`, {
-    headers: { "Content-Type": "application/json"
-    ,
-    "Authorization": localStorage.getItem("token") 
+export const getUser = async(id) => {
+  console.log(id)
+  const response = await axiosInstance.get(`http://localhost:4000/users/${id}`, {
+        headers: { "Content-Type": "application/json",
+                   "Authorization": localStorage.getItem("token") 
     }
-  })
-  .then(response => console.log(response))
+  })  
+  // .then(response => console.log(response.data))
+  .catch((error) => console.log("This is the error: ", error))
 
-  // console.log(response)
+  return JSON.parse(response.data.data)
 }
     
 export const createUser = (userInfo) => {
 
-const newUser = JSON.stringify({"user": {
-    "username": `${userInfo.username}`,
-    "firstname": `${userInfo.firstname}`,
-    "lastname": `${userInfo.lastname}`,
-    "email": `${userInfo.email}`,
-    "password": `${userInfo.password}`
-  }
-})
-console.log(newUser)
-  const response = axiosInstance.post(`http://localhost:4000/signup`, newUser, {
-      headers: {"Content-Type": "application/json"}})
-      .then((response) => console.log(response))
-      .catch((error) => console.log(`This is the error: ${error}`))
+  const newUser = JSON.stringify({"user": {
+      "username": `${userInfo.username}`,
+      "firstname": `${userInfo.firstname}`,
+      "lastname": `${userInfo.lastname}`,
+      "email": `${userInfo.email}`,
+      "password": `${userInfo.password}`
+    }
+  })
+  console.log(newUser)
+    const response = axiosInstance.post(`http://localhost:4000/signup`, newUser, {
+        headers: {"Content-Type": "application/json"}})
+        .then((response) => console.log(response))
+        .catch((error) => console.log(`This is the error: ${error}`))
 
 }
 

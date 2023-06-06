@@ -37,7 +37,7 @@ const bookReviews = () => {
     getReviews(id)
     .then(review => {
         setReviewList(review)
-        // console.log("FIRST CLOG ** ", review)
+        console.log("FIRST CLOG ** ", review)
         // console.log("SECOND CLOG ***  ", reviewList)        
     })
      .catch((error) => console.log(error))

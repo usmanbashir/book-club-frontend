@@ -16,7 +16,7 @@ export default function EachBookDetails(props) {
                 <div>Genre: {book.genre}</div>
                 <div>Date published: {book.publishedOn}</div>
                 <br></br>
-            {!isUserLoggedIn ?    
+            {localStorage.getItem("token") ?    
                 <Link to={`/books/${book.id}`}>Show me more!</Link>
                 : null } 
             </div>
