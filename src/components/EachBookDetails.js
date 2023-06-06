@@ -8,6 +8,9 @@ export default function EachBookDetails(props) {
 
     return(
         <>
+        {/* Show some book details and
+            link to the individual book page.
+        */}
         <Link to={`/books/${book.book.id}`}>
             <div className="eachBook">
                 <div>{book.book.title}</div>
@@ -17,6 +20,7 @@ export default function EachBookDetails(props) {
                 <div>Date published: {book.book.publishedOn}</div>
             </div>
         </Link>
+        
         </>
     )
 }

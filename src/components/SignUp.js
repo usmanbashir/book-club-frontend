@@ -22,12 +22,9 @@ export default function SignUp() {
     function submitNewUser(e){
         e.preventDefault();
         // console.log(newUser);
+        // Send the new user information to the createUser API call.
         createUser(newUser)
-            // .then((user) => user.json())
-            // // .then((data) => {
-            // //     console.log("PRACTICE")}
-            // // )
-            // .catch((error) => console.log(error))
+        // Set the newUser state to empty.
         setNewUser({
             username:"", 
             firstname: "", 
