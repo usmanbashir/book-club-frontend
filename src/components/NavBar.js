@@ -21,11 +21,12 @@ export default function NavBar(props) {
 
         {/* <Link to="/books/:id">BOOK</Link> */}
         &nbsp; | &nbsp;
-        {isUserLoggedIn && <Logout 
+        {/* {isUserLoggedIn &&  */}
+        <Logout 
                 isUserLoggedIn={isUserLoggedIn}
                 setIsUserLoggedIn={setIsUserLoggedIn}
                 />
-        }
+        {/* } */}
         &nbsp; | &nbsp;
 
         </div>

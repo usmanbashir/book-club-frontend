@@ -15,7 +15,6 @@ export default function EachBookDetails(props) {
                 <br></br>
                 <div>Genre: {book.book.genre}</div>
                 <div>Date published: {book.book.publishedOn}</div>
-                <div>Genre: {book.book.genre}</div>
             </div>
         </Link>
         </>

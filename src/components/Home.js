@@ -3,10 +3,11 @@ import { getAllBooks } from '../apis/BookApis'
 import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
+import NewBook from './NewBook'
 
-export default function Home() {
+export default function Home(props) {
 
-const [books, setBooks] = useState([])
+    const [books, setBooks] = useState([])
 
 //  Get all books via Book APIs and save to above state variable.
 useEffect(() => {
@@ -16,6 +17,7 @@ useEffect(() => {
         setBooks(data)
         console.log(data)})
     .catch((error) => error.message)
+
 }, [])
 
 
@@ -24,6 +26,8 @@ return(
 
     {/* <Logout /> */}
 
+    <NewBook />
+    
         {/* <div>Current book</div>
         <div>New book</div> */}
     <div className='Lorem'>

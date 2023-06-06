@@ -38,6 +38,7 @@ export const createUserToken = (userInfo) => {
         if (response.headers.authorization){
           console.log(response)
           localStorage.setItem("token", response.headers.authorization)
+          localStorage.setItem("currentUserId", response.data.data.id)
         }
       })
       .catch((error) => console.log(`This is the error: ${error}`))
@@ -56,7 +57,7 @@ export const removeUserToken = () => {
     .then((response) => console.log(response))
   // Remove the token from local storage. 
   localStorage.removeItem("token")
-
+  localStorage.removeItem("currentUserId")
   // return response.data
 }
 
