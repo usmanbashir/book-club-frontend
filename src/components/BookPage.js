@@ -48,7 +48,7 @@ const bookReviews = () => {
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
-    console.log("*****HOW MANY TIMES ******")
+    // console.log("*****HOW MANY TIMES ******")
 }, [id])
 
 

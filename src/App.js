@@ -13,7 +13,7 @@ function App() {
 
 function isLoggedIn(){
     const getToken = localStorage.getItem("token")
-    console.log(getToken)
+    // console.log(getToken)
     if (getToken){
         setIsUserLoggedIn(true)
     }
@@ -21,7 +21,6 @@ function isLoggedIn(){
 
   return (
     <div>
-      <h1>Hello readers</h1>
 
       <div className='NavBar'>
            <NavBar isUserLoggedIn={isUserLoggedIn}
@@ -29,7 +28,8 @@ function isLoggedIn(){
            />  </div>
 
       <Routes>
-        <Route path="/Home" element={<Home />} />
+        <Route path="/Home" element={<Home
+                    isUserLoggedIn={isUserLoggedIn} />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/LogIn" element={<Login  
                     isUserLoggedIn={isUserLoggedIn}

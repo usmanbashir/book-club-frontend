@@ -1,11 +1,14 @@
 
 import { getAllBooks } from '../apis/BookApis'
+import { getUser } from '../apis/UserApis'
 import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
 import NewBook from './NewBook'
 
 export default function Home(props) {
+
+    const isUserLoggedIn = props;
 
     const [books, setBooks] = useState([])
 
@@ -24,7 +27,13 @@ useEffect(() => {
 return(
     <>
 
-    {/* <Logout /> */}
+{!isUserLoggedIn ? 
+    <h1>Hello readers</h1>
+    :
+    <h1>Hello {getUser}</h1>
+}
+
+
 
     <NewBook />
     
@@ -44,7 +53,8 @@ return(
         <h2>All books</h2>
         {/* Map over all outputs from above call. */}
         {books.map((book, index) => <EachBookDetails 
-                book={book} key={book.id} index={index} />)}
+                book={book} key={book.id} index={index}
+                isUserLoggedIn={isUserLoggedIn} />)}
     </div>
 
     </>

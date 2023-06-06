@@ -1,9 +1,18 @@
 import axios from 'axios';
 import axiosInstance from './AxiosInstance';
 
-// export const getUser = (id) => {
-//   return fetch(`localhost:4000/users/${id}`)
-// }
+export const getUser = () => {
+  // return fetch(`localhost:4000/users/${id}`)
+  const response = axiosInstance.get(`localhost:4000/current_user`, {
+    headers: { "Content-Type": "application/json"
+    ,
+    "Authorization": localStorage.getItem("token") 
+    }
+  })
+  .then(response => console.log(response))
+
+  console.log(response)
+}
     
 export const createUser = (userInfo) => {
 
