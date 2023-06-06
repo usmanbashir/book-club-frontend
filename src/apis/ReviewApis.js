@@ -8,7 +8,7 @@ export const getReviews = async(id) => {
                 }            
         })
     // .then(response => console.log(response.data))
-    .catch(error => console.log("THIS IS THE ERROR ***" + error))
+    .catch(error => console.log("THIS IS THE ERROR ***", error))
     
     return JSON.stringify(response.data)
 }

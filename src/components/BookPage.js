@@ -7,7 +7,7 @@ import EachReview from "./EachReview"
 export default function BookPage() {
 
 const [ singleBook, setSingleBook ] = useState({})
-const [ editedBook, setEditedBook ] = useState(singleBook)
+const [ editedBook, setEditedBook ] = useState({})
 
 const [ reviewList, setReviewList ] = useState([])
 
@@ -22,6 +22,7 @@ const getBook = () => {
     .then((data) => {
         // Set above state to hold book details. 
         setSingleBook(data)
+        setEditedBook(data)
         // console.log(data)
     })
 }
@@ -31,36 +32,38 @@ const bookReviews = () => {
     getReviews(id)
     .then(review => {
         setReviewList(review)
-        // console.log("FIRST CLOG ** " + review)
-        // console.log("SECOND CLOG ***  " + reviewList)        
+        // console.log("FIRST CLOG ** ", review)
+        // console.log("SECOND CLOG ***  ", reviewList)        
     })
      .catch((error) => console.log(error))
-// console.log("THIRD CLOG ****  " + reviewList)
+
+// console.log("THIRD CLOG ****  ", reviewList)
 }
 
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
-
-}, [])
+    console.log("*****HOW MANY TIMES ******")
+}, [id])
 
 function handleInput(e){
     setEditedBook({...editedBook, [e.target.name]: e.target.value})
     console.log(e.target.value)
 }
 
-function submitEditBook(e) {
+const submitEditBook = (e) => {
     e.preventDefault()
     // Send edited details over to patch API call
-    // as well as current book id.
+    // as well as current book id. Update book with new info.
     editOneBook(editedBook, id)
     // console.log(editedBook, id)
-
-    
+    // Update singleBook based on the newly updated book.
+    setSingleBook(editedBook)
+     
 }
+if (!reviewList.length) return "Theree's no data"
 
 
-//    console.log("    POST USE EFFECT ^^^^^^^     " + reviewList) 
 
     return (
         <>
@@ -74,17 +77,24 @@ function submitEditBook(e) {
         <h2>Meeting details</h2>
         <div>Date: {singleBook.meeting_date}</div>
         <div>Location: {singleBook.meeting_location}</div>
+    
+    {/* {console.log(reviewList)} */}
 
-        {/* {reviewList && 
+        {/* {reviewList.length > 0 ? 
             reviewList.map((review) => 
-            <EachReview  review={review} /> 
-            )
+            <EachReview  review={review} key={review.id} /> 
+            ) : null
          } */}
 
+
+
         <br></br>
+
         <h3>Delete book</h3>
         <button>Delete book</button>
+
         <br></br>
+
 <form>
             <div>
             <h3>Edit book</h3>
@@ -93,7 +103,7 @@ function submitEditBook(e) {
                 name="title"
                 value={editedBook.title}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -103,7 +113,7 @@ function submitEditBook(e) {
                 name="author"
                 value={editedBook.author}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -113,7 +123,7 @@ function submitEditBook(e) {
                 name="genre"
                 value={editedBook.genre}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -124,7 +134,7 @@ function submitEditBook(e) {
                 name="publishedOn"
                 value={editedBook.publishedOn}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -135,7 +145,7 @@ function submitEditBook(e) {
                 name="meeting_date"
                 value={editedBook.meeting_date}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -145,7 +155,7 @@ function submitEditBook(e) {
                 name="meeting_location"
                 value={editedBook.meeting_location}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 

@@ -2,10 +2,10 @@
 
 export default function EachReview(props) {
 
-    const {reviewList} = props;
+    // const {reviewList} = props;
 
     // console.log("STEP DOWN A COMPONENT %%% " + JSON.stringify(review))
-    console.log("SECOND STEP DOWN %%%%  " + reviewList)
+    // console.log("SECOND STEP DOWN %%%%  " + reviewList)
 
     return (
         <>
