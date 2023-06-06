@@ -6,7 +6,6 @@ import NavBar from './components/NavBar';
 import SignUp from './components/SignUp';
 import Login from './components/LogIn';
 import BookPage from './components/BookPage';
-import { getToken } from "./apis/UserApis"
 
 function App() {
 

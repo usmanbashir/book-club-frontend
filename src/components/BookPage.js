@@ -85,8 +85,6 @@ if (!reviewList.length) return "Theree's no data"
             ) : null
          } */}
 
-
-
         <br></br>
 
         <h3>Delete book</h3>
@@ -98,6 +96,7 @@ if (!reviewList.length) return "Theree's no data"
 
          {showForm ? <EditBookForm 
          singleBook={singleBook}
+         setSingleBook={setSingleBook}
          editedBook={editedBook}
          setEditedBook={setEditedBook}
          id={id} />
