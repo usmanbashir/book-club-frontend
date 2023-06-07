@@ -5,8 +5,8 @@ import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
 import NewBook from './NewBook'
-import Logout from './Logout'
 import { useNavigate } from 'react-router'
+import { Link } from "react-router-dom";
 
 export default function Home({isUserLoggedIn}) {
 
@@ -69,6 +69,11 @@ return(
     : null
 }
 
+<div>
+
+
+</div>
+
 {/* If user is logged in, show new book button */}
 {isUserLoggedIn ? 
     <div className='AddBook'>
@@ -80,13 +85,12 @@ return(
         <div>New book</div> */}
     <div class="border border-5 border-success 
             bg-danger-subtle p-4 m-4">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-    sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h3>Current book</h3>
+    <p>{findCurrentBook.title}</p>
+    <p>{findCurrentBook.author}</p>
+    <p>{findCurrentBook.meeting_date}</p>
+    <p>{findCurrentBook.meeting_location}</p>
+    <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
     </div>
 
     <div class="container"> 
