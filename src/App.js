@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Home from './components/Home'
 import NavBar from './components/NavBar';
@@ -21,16 +21,22 @@ function App() {
       }
   }
 
+  useEffect(() => {
+    isLoggedIn()
+  }, [])
+
   return (
     <div>
 
       <div class="navbar navbar-expand-lg bg-body-tertiary bg-danger-subtle ">
-           <NavBar />  </div>
+           <NavBar isUserLoggedIn={isUserLoggedIn}
+           setIsUserLoggedIn={setIsUserLoggedIn} />  </div>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login isLoggedIn={isLoggedIn}
+            setIsUserLoggedIn={setIsUserLoggedIn} />} />
         <Route path="/books/:id" element={<BookPage />} />
       </Routes>
 

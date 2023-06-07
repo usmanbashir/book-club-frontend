@@ -3,7 +3,8 @@ import { createUserToken } from "../apis/UserApis"
 import { useNavigate } from "react-router";
 
 
-export default function Login() {
+export default function Login({isLoggedIn, setIsUserLoggedIn}) {
+
 
     const [user, setUser] = useState({
         email: "",
@@ -19,7 +20,8 @@ function findUser(e){
     e.preventDefault()
     createUserToken(user)
     console.log(user)
-    // setIsUserLoggedIn(true)
+    isLoggedIn()
+    setIsUserLoggedIn(true)
     navigate('/')
 }
 

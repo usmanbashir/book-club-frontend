@@ -1,5 +1,6 @@
 import axios from 'axios';
 import axiosInstance from './AxiosInstance';
+import {updateToken} from '../components/NavBar';
 
 export const getUser = async(id) => {
   console.log(id)
@@ -11,7 +12,7 @@ export const getUser = async(id) => {
   // .then(response => console.log(response.data))
   .catch((error) => console.log("This is the error: ", error))
 
-  return JSON.parse(response.data.data)
+  return response.data
 }
     
 export const createUser = (userInfo) => {

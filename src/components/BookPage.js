@@ -36,7 +36,8 @@ const bookReviews = () => {
     console.log(id)
     getReviews(id)
     .then(review => {
-        setReviewList(review)
+        let reviewData = JSON.parse(review)
+        setReviewList(reviewData)
         // console.log("FIRST CLOG ** ", review)
         // console.log("SECOND CLOG ***  ", reviewList)        
     })
@@ -79,11 +80,11 @@ if (!reviewList.length) return "Theree's no data"
     
     {/* {console.log(reviewList)} */}
 
-        {/* {reviewList.length > 0 ? 
+        {reviewList.length > 0 ? 
             reviewList.map((review) => 
             <EachReview  review={review} key={review.id} /> 
             ) : null
-         } */}
+         }
 
         <br></br>
 

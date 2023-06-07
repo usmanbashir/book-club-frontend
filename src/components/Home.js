@@ -14,7 +14,7 @@ export default function Home(props) {
     const navigate = useNavigate()
 
     const [books, setBooks] = useState([])
-    // const [currentUserName, setCurrentUserName] = useState({})
+    const [currentUserName, setCurrentUserName] = useState({})
 
 //  Get all books via Book APIs and save to above state variable.
 useEffect(() => {
@@ -25,23 +25,26 @@ useEffect(() => {
         console.log(data)})
     .catch((error) => error.message)
 
+    if (localStorage.getItem("currentUserId")){
+        findUserName()
+    }
 }, [])
 
-// const findUserName = () => {
-//     // console.log(localStorage.getItem("currentUserId"))
-//     getUser(parseInt(localStorage.getItem("currentUserId")))
-//     // .then(response => console.log(JSON.parse(response)))
-//     .then(data => setCurrentUserName(data))
+const findUserName = () => {
+    // console.log(localStorage.getItem("currentUserId"))
+    getUser(parseInt(localStorage.getItem("currentUserId")))
+    .then(response => console.log(response))
+    // .then(response => setCurrentUserName(response.email))
 
-//     // console.log(currentUserName)
-// }
+    console.log(currentUserName)
+}
 
 // Check through books array for each date, looking for the largest date
-// const findCurrentBook = books.reduce((a, b) => {
-//     return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
-// })
+const findCurrentBook = books.reduce((a, b) => {
+    return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
+}, {})
 
-// console.log(findCurrentBook)
+console.log(findCurrentBook)
 
 const deleteAccount = () => {
    
@@ -53,7 +56,8 @@ const deleteAccount = () => {
 
 return(
     <>
-{/* <button onClick={findUserName}>Click</button> */}
+<button onClick={findUserName}>Click</button>
+
 {!localStorage.getItem("token") ? 
     <h1>Hello Readers</h1>
     :

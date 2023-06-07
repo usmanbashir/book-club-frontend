@@ -2,7 +2,7 @@
 
 export default function EachReview(props) {
 
-    // const {reviewList} = props;
+    const {review} = props;
 
     // console.log("STEP DOWN A COMPONENT %%% " + JSON.stringify(review))
     // console.log("SECOND STEP DOWN %%%%  " + reviewList)
@@ -10,7 +10,7 @@ export default function EachReview(props) {
     return (
         <>
             <div className="eachReview">
-                <div></div>
+                <div>{review.title}</div>
 
             </div>
         </>
