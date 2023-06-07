@@ -76,14 +76,12 @@ return(
 </div>
 
 {/* If user is logged in, show new book button */}
-{isUserLoggedIn ? 
+{ isUserLoggedIn ? 
     <div className='AddBook'>
         <NewBook />
     </div>
 : null }
     
-        {/* <div>Current book</div>
-        <div>New book</div> */}
 <div class="border border-5 border-success bg-danger-subtle p-4 m-4">
     <h2>Current book</h2>
     <h3>{findCurrentBook.title}</h3>
@@ -95,7 +93,7 @@ return(
     <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
     : null}
 </div>
-
+{ isUserLoggedIn ?
 <div class="border border-5 border-success bg-danger-subtle p-4 m-4">
     <h3>My details</h3>
     <div><strong>Username: </strong>{currentUserName.username}</div>
@@ -103,6 +101,8 @@ return(
     <div><strong>Last name: </strong>{currentUserName.firstname}</div>
     <div><strong>Email: </strong>{currentUserName.email}</div>
 </div>
+: null }
+
 
     <div class="container"> 
         <h2>All books</h2>
