@@ -20,6 +20,7 @@ const [ newReview, setNewReview ] = useState({
 
 function handleInput(e) {
     setNewReview({...newReview, [e.target.name]: e.target.value})
+    console.log([e.target.name], e.target.value)
 }
 
 const submitNewReview = (e) => {
@@ -56,12 +57,12 @@ const submitNewReview = (e) => {
 
                 <div>
                     <label>Rating /5</label>
-                        <select>
-                            <option value={newReview.rating}>1</option>
-                            <option value={newReview.rating}>2</option>
-                            <option value={newReview.rating}>3</option>
-                            <option value={newReview.rating}>4</option>
-                            <option value={newReview.rating}>5</option>
+                        <select name="rating" onChange={handleInput} value={newReview.rating}>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                 </div>
 

@@ -6,8 +6,7 @@ import EachReview from "./EachReview"
 import EditBookForm from "./EditBookForm"
 import NewReviewForm from "./NewReviewForm"
 
-export default function BookPage(props) {
-const isUserLoggedIn = props;
+export default function BookPage({isUserLoggedIn}) {
 
 const [ singleBook, setSingleBook ] = useState({})
 const [ editedBook, setEditedBook ] = useState({})
@@ -50,7 +49,6 @@ const bookReviews = () => {
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
-    // findAverageRating()
 }, [reviewList])
 
 // Call the delete book API with the current id as a param. 
@@ -64,9 +62,10 @@ const editFormBtn = () => {
 }
 
 const [averageRating, setAverageRating] = useState(0)
+const [ showRating, setShowRating ] = useState(false)
 
 // Get average rating
-const findAverageRating = () => {
+const findAverage = () => {
 
     if (reviewList.length > 0) {
         // For each object in the array, 
@@ -75,27 +74,31 @@ const findAverageRating = () => {
             return {rating: a.rating + b.rating}})
         // console.log(sum)
 
-        const average = ((sum.rating) / reviewList.length).toFixed(2)
+        const average = ((sum.rating) / reviewList.length).toFixed(1)
         console.log(average)
 
         setAverageRating(average)
-        return averageRating
         }
+        setShowRating(!showRating)
     }
-
 
 if (!reviewList.length) return "Log in or sign up to see this page!"
 
     return (
         <>
-        {/* <button onClick={findAverageRating}>Show average rating</button>
-        <div>Average rating: {averageRating}</div> */}
+
 
         <h1>{singleBook.title}</h1>
         <div>Written by: {singleBook.author}</div>
         <div>Genre: {singleBook.genre}</div>
         <div>Published: {singleBook.publishedOn}</div>
         <br></br>
+        
+        <button onClick={findAverage}>Show average rating</button>
+        {showRating ? 
+        <div>{averageRating}/5</div>
+        : null}
+        
         <br></br>
         <h3>Meeting details</h3>
         <div>Date: {singleBook.meeting_date}</div>
