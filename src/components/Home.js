@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 export default function Home({isUserLoggedIn}) {
 
     const navigate = useNavigate()
-
     const [books, setBooks] = useState([])
     const [currentUserName, setCurrentUserName] = useState({})
 
