@@ -84,11 +84,12 @@ return(
         {/* <div>Current book</div>
         <div>New book</div> */}
 <div class="border border-5 border-success bg-danger-subtle p-4 m-4">
-    <h3>Current book</h3>
-    <p>{findCurrentBook.title}</p>
+    <h2>Current book</h2>
+    <h3>{findCurrentBook.title}</h3>
     <p>{findCurrentBook.author}</p>
-    <p>{findCurrentBook.meeting_date}</p>
-    <p>{findCurrentBook.meeting_location}</p>
+    <br></br>
+    <p><strong>Meeting: </strong>{findCurrentBook.meeting_date}</p>
+    <p><strong>Location: </strong>{findCurrentBook.meeting_location}</p>
     <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
 </div>
 

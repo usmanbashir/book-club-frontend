@@ -32,27 +32,25 @@ const getBook = () => {
     })
 }
 
+// Get reviews for this book.
 const bookReviews = () => {
     console.log(id)
     getReviews(id)
     .then(review => {
         let reviewData = JSON.parse(review)
         setReviewList(reviewData)
-        // console.log("FIRST CLOG ** ", review)
-        // console.log("SECOND CLOG ***  ", reviewList)        
     })
      .catch((error) => console.log(error))
 
-// console.log("THIRD CLOG ****  ", reviewList)
 }
 
+// Run these functions on page load and everytime the id parameter changes.
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
-    console.log("*****HOW MANY TIMES ******")
 }, [id])
 
-
+// Call the delete book API with the current id as a param. 
 const deleteOneBook = () => {
     deleteBook(id)
     navigate("/home")
@@ -62,8 +60,7 @@ const editFormBtn = () => {
     setShowForm(!showForm)
 }
 
-if (!reviewList.length) return "Theree's no data"
-
+if (!reviewList.length) return "Log in or sign up to see this page!"
 
     return (
         <>
@@ -74,21 +71,12 @@ if (!reviewList.length) return "Theree's no data"
         <div>Published: {singleBook.publishedOn}</div>
         <br></br>
         <br></br>
-        <h2>Meeting details</h2>
+        <h3>Meeting details</h3>
         <div>Date: {singleBook.meeting_date}</div>
         <div>Location: {singleBook.meeting_location}</div>
-    
-    {/* {console.log(reviewList)} */}
-
-        {reviewList.length > 0 ? 
-            reviewList.map((review) => 
-            <EachReview  review={review} key={review.id} /> 
-            ) : null
-         }
 
         <br></br>
 
-        <h3>Delete book</h3>
         <button onClick={deleteOneBook}>Delete</button>
 
         <br></br>
@@ -102,6 +90,16 @@ if (!reviewList.length) return "Theree's no data"
          setEditedBook={setEditedBook}
          id={id} />
             : null}
+        
+        <br></br>
+        <br></br>
+
+        <h2>Reviews</h2>
+        {reviewList.length > 0 ? 
+            reviewList.map((review) => 
+            <EachReview  review={review} key={review.id} /> 
+            ) : null
+         }
 
         </>
     )

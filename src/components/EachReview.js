@@ -11,7 +11,7 @@ export default function EachReview(props) {
         <>
             <div className="eachReview">
                 <div>{review.title}</div>
-
+                
             </div>
         </>
 
