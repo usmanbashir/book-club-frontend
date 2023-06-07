@@ -5,10 +5,13 @@ import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
 import NewBook from './NewBook'
+import Logout from './Logout'
+import { useNavigate } from 'react-router'
 
 export default function Home(props) {
 
     const isUserLoggedIn = props;
+    const navigate = useNavigate()
 
     const [books, setBooks] = useState([])
     // const [currentUserName, setCurrentUserName] = useState({})
@@ -41,7 +44,11 @@ useEffect(() => {
 // console.log(findCurrentBook)
 
 const deleteAccount = () => {
+   
     deleteUser(parseInt(localStorage.getItem("currentUserId")))
+    localStorage.removeItem("token")
+    localStorage.removeItem("currentUserId")
+    navigate('/')
 }
 
 return(

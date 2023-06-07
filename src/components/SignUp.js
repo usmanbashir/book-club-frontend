@@ -48,9 +48,11 @@ return(
                 <label>Username</label>
                 <input
                     name='username'
+                    type='text'
                     value={newUser.username}
                     onChange={handleInput} 
                     autoComplete="off"
+                    required
                 />
             </div>
 
@@ -58,9 +60,11 @@ return(
                 <label>First Name</label>
                 <input 
                     name='firstname'
+                    type='text'
                     value={newUser.firstname}
                     onChange={handleInput} 
                     autoComplete="off"            
+                    required
                 />
             </div>
 
@@ -68,9 +72,11 @@ return(
                 <label>Last Name</label>
                 <input
                     name='lastname'
+                    type='text'
                     value={newUser.lastname}
                     onChange={handleInput}
                     autoComplete="off"
+                    required
                 />
             </div>
             
@@ -78,9 +84,11 @@ return(
                 <label>Email</label>
                 <input
                     name='email'
+                    type='email'
                     value={newUser.email}
                     onChange={handleInput}
                     autoComplete="off"
+                    required
                 />
             </div>
 
@@ -91,6 +99,7 @@ return(
                     type='password'
                     value={newUser.password}
                     onChange={handleInput} 
+                    required
                 />
             </div>
 
