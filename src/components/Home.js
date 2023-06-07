@@ -21,7 +21,8 @@ useEffect(() => {
     .then(books => books.json())
     .then(data => {
         setBooks(data)
-        console.log(data)})
+        // console.log(data)
+    })
     .catch((error) => error.message)
 
     if (localStorage.getItem("currentUserId")){
@@ -32,10 +33,9 @@ useEffect(() => {
 const findUserName = () => {
     // console.log(localStorage.getItem("currentUserId"))
     getUser(parseInt(localStorage.getItem("currentUserId")))
-    .then(response => console.log(response))
-    // .then(response => setCurrentUserName(response.email))
+    // .then(response => console.log(response))
+    .then(response => setCurrentUserName(response))
 
-    console.log(currentUserName)
 }
 
 // Check through books array for each date, looking for the largest date
@@ -44,6 +44,7 @@ const findCurrentBook = books.reduce((a, b) => {
 }, {})
 
 console.log(findCurrentBook)
+    console.log(currentUserName.firstname)
 
 const deleteAccount = () => {
    
@@ -60,7 +61,7 @@ return(
 {!isUserLoggedIn ? 
     <h1>Hello Readers</h1>
     :
-    <h1>Hello again</h1>
+    <h1>Hello again {currentUserName.username}</h1>
 }
 {localStorage.getItem("token") ?
     <button onClick={deleteAccount} 
