@@ -30,6 +30,7 @@ useEffect(() => {
     }
 }, [])
 
+// Get current user details and set data into currentUserName state.
 const findUserName = () => {
     // console.log(localStorage.getItem("currentUserId"))
     getUser(parseInt(localStorage.getItem("currentUserId")))
@@ -43,8 +44,8 @@ const findCurrentBook = books.reduce((a, b) => {
     return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
 }, {})
 
-console.log(findCurrentBook)
-    console.log(currentUserName.firstname)
+// console.log(findCurrentBook)
+// console.log(currentUserName.firstname)
 
 const deleteAccount = () => {
    
@@ -56,8 +57,6 @@ const deleteAccount = () => {
 
 return(
     <>
-<button onClick={findUserName}>Click</button>
-
 {!isUserLoggedIn ? 
     <h1>Hello Readers</h1>
     :
@@ -84,15 +83,22 @@ return(
     
         {/* <div>Current book</div>
         <div>New book</div> */}
-    <div class="border border-5 border-success 
-            bg-danger-subtle p-4 m-4">
+<div class="border border-5 border-success bg-danger-subtle p-4 m-4">
     <h3>Current book</h3>
     <p>{findCurrentBook.title}</p>
     <p>{findCurrentBook.author}</p>
     <p>{findCurrentBook.meeting_date}</p>
     <p>{findCurrentBook.meeting_location}</p>
     <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
-    </div>
+</div>
+
+<div class="border border-5 border-success bg-danger-subtle p-4 m-4">
+    <h3>My details</h3>
+    <div><strong>Username: </strong>{currentUserName.username}</div>
+    <div><strong>First name: </strong>{currentUserName.firstname}</div>
+    <div><strong>Last name: </strong>{currentUserName.firstname}</div>
+    <div><strong>Email: </strong>{currentUserName.email}</div>
+</div>
 
     <div class="container"> 
         <h2>All books</h2>
