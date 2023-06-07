@@ -20,7 +20,7 @@ const [ newReview, setNewReview ] = useState({
 
 function handleInput(e) {
     setNewReview({...newReview, [e.target.name]: e.target.value})
-    console.log([e.target.name], e.target.value)
+    console.log(e.target.name, e.target.value)
 }
 
 const submitNewReview = (e) => {

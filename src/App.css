@@ -1,3 +1,5 @@
+  @import url('https://fonts.googleapis.com/css2?family=Domine&family=Red+Hat+Display&family=Diphylleia&display=swap');
+
 
 /* HOME */
 /* .eachBook {
@@ -7,25 +9,141 @@
   width: 15rem;
   background-color: #FACAB1;
 } */
-/* .Lorem {
+.home {
+background-color: #FFFDD0;
+}
+.homeDetails {
+  display:flex
+}
+
+.welcome {
+  font-family: 'Diphylleia', serif;
+  
+  padding-left: 3rem;
+  padding-top: 2rem;
+}
+.currentBookContainer, .userDetails {
   padding: 2rem;
   margin: 2rem;
   width: 75rem;
-  border: 0.3rem solid #00AF91;
-  background-color: #FACAB1;
-} */
+  color: #FFFDD0;
+  border: 0.5rem solid #63D471;
+  background-color: #63A46C;
+  display: flex-grow;
+  /* font-family: 'Zilla Slab', serif; */
+  /* font-family: 'Red Hat Display', sans-serif; */
+  font-family: 'Domine', serif;
+  font-size: large;
+}
+.currentHeading {
+  font-family: 'Diphylleia', serif;
+  margin-bottom: 1rem;
+}
+.currentBook {
+  padding-left: 1rem;
+}
 
 /* NAVBAR */
-/* .NavBar {
-  background-color: #FACAB1;;
-  padding: 1.2rem;
+.NavBar {
+  background-color: #63A46C;;
+  padding: 1rem;
   text-decoration: none;
-} */
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+}
+.link {
+  color: #FFFDD0;
+}
+
+/* All books */
+.allBooksContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.allBooksHeader {
+  font-family: 'Diphylleia', serif;
+  padding-left: 3rem;
+}
+.eachBookDetails {
+  margin: 2rem;
+  padding: 1.5rem;
+  border: 0.5rem solid #63D471;
+  background-color: #63A46C;
+  width: 15rem;
+  height: 12rem;
+  color: #FFFDD0;
+  font-family: 'Domine', serif;
+  font-size: large;
+}
+
+
+/* Log In Form */
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem;;
+}
+.loginForm {
+  border: 0.5rem solid #63A46C;
+  width: 35rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.signupForm {
+  border: 0.5rem solid #63A46C;
+  width: 35rem;
+  height: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.fields {
+  margin: 1rem;
+}
+.form-Container label {
+  flex: none;
+  display: block;
+}
+.input-field {
+  flex: 1 1 auto;
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  padding: 4px;
+  margin-top: -4px;
+}
+
+.button {
+  border: 0.2rem solid #63A46C;
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.3rem;
+  background-color: #63A46C;
+  color: #FFFDD0;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: #FFFDD0;
+  color: #63A46C;
+
+}
 
 
 
 
 
+
+
+
+
+
+
+/* 
 .App {
   text-align: center;
 }
@@ -63,4 +181,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

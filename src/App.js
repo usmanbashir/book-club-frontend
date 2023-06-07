@@ -28,7 +28,7 @@ function App() {
   return (
     <div>
 
-      <div class="navbar navbar-expand-lg bg-body-tertiary bg-danger-subtle ">
+      <div>
            <NavBar isUserLoggedIn={isUserLoggedIn}
            setIsUserLoggedIn={setIsUserLoggedIn} />  </div>
 

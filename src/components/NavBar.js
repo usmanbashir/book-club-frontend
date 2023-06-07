@@ -15,22 +15,22 @@ export default function NavBar({isUserLoggedIn, setIsUserLoggedIn}) {
     // }
 
     return (
-        <div class="container-fluid">
+        <div class="NavBar">
 
-            <div class="navbar-brand"><Link to="/">Home</Link></div>
+            <div><Link to="/" className="link">Home</Link></div>
             
 
-            <div class="nav-link link-success link-offset-2 link-underline-opacity-70 link-underline-opacity-100-hover">
+            <div>
             {!isUserLoggedIn ? 
-                <Link to="/LogIn">Log In</Link> 
+                <Link to="/LogIn" className="link" id="login">Log In</Link> 
                 : null} 
             </div>
-            <div class="nav-link">
+            <div>
                 {!isUserLoggedIn ? 
-                <Link to="/SignUp">Sign Up</Link>
+                <Link to="/SignUp" className="link">Sign Up</Link>
                 : null}
             </div>
-            <div class="nav-linklink-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+            <div className="">
                 {isUserLoggedIn ? 
                 <Logout setIsUserLoggedIn={setIsUserLoggedIn} />
                 : null}   

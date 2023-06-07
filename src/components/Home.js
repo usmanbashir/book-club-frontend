@@ -56,64 +56,67 @@ const deleteAccount = () => {
 }
 
 return(
-    <>
-{!isUserLoggedIn ? 
-    <h1>Hello Readers</h1>
-    :
-    <h1>Hello again {currentUserName.username}</h1>
-}
-
-{localStorage.getItem("token") ?
-    <button onClick={deleteAccount} 
-            type="button" class="btn btn-outline-dark btn-sm">
-                Delete account</button>
-    : null
-}
-
-<div>
-
-
-</div>
-
-{/* If user is logged in, show new book button */}
-{ isUserLoggedIn ? 
-    <div className='AddBook'>
-        <NewBook />
+<div className='home'>
+    <div className='welcome'>
+        {!isUserLoggedIn ? 
+            <h1>Hello Readers</h1>
+            :
+            <h1>Hello again {currentUserName.username}</h1>
+        }  
     </div>
-: null }
-    
-<div class="border border-5 border-success bg-danger-subtle p-4 m-4">
-    <h2>Current book</h2>
-    <h3>{findCurrentBook.title}</h3>
-    <p>{findCurrentBook.author}</p>
-    <br></br>
-    <p><strong>Meeting: </strong>{findCurrentBook.meeting_date}</p>
-    <p><strong>Location: </strong>{findCurrentBook.meeting_location}</p>
-    {isUserLoggedIn ? 
-    <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
-    : null}
-</div>
-{ isUserLoggedIn ?
-<div class="border border-5 border-success bg-danger-subtle p-4 m-4">
-    <h3>My details</h3>
-    <div><strong>Username: </strong>{currentUserName.username}</div>
-    <div><strong>First name: </strong>{currentUserName.firstname}</div>
-    <div><strong>Last name: </strong>{currentUserName.firstname}</div>
-    <div><strong>Email: </strong>{currentUserName.email}</div>
-</div>
-: null }
 
 
-    <div class="container"> 
-        <h2>All books</h2>
-        <div class="row row-gap-4">
+
+
+    {/* If user is logged in, show new book button */}
+    { isUserLoggedIn ? 
+        <div className='AddBook'>
+            <NewBook />
+        </div>
+    : null }
+
+    <div className="homeDetails">   
+        <div className="currentBookContainer">
+            <h2 className="currentHeading">Our current book</h2>
+            <div className='currentBook'>
+                <h3>{findCurrentBook.title}</h3>
+                <p>{findCurrentBook.author}</p>
+                <br></br>
+                <p><strong>Meeting: </strong>{findCurrentBook.meeting_date}</p>
+                <p><strong>Location: </strong>{findCurrentBook.meeting_location}</p>
+                {isUserLoggedIn ? 
+                <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
+                : null}
+            </div>
+
+        </div>
+    { isUserLoggedIn ?
+        <div className="userDetails">
+            <h3>My details</h3>
+            <div><strong>Username: </strong>{currentUserName.username}</div>
+            <div><strong>First name: </strong>{currentUserName.firstname}</div>
+            <div><strong>Last name: </strong>{currentUserName.firstname}</div>
+            <div><strong>Email: </strong>{currentUserName.email}</div>
+
+
+            <button onClick={deleteAccount} 
+                    type="button" className="deleteBtn">
+            Delete account</button>
+        </div>
+    : null }
+    </div> 
+
+    <div> 
+        <h2 className='allBooksHeader'>All books</h2>
+        <div class="allBooksContainer">
             {/* Map over all outputs from above call. */}
-            {books.map((book, index) => <div class="col-md-4"><EachBookDetails 
+            {books.map((book, index) => <div><EachBookDetails 
                     book={book} key={book.id} index={index}
                     isUserLoggedIn={isUserLoggedIn} /></div>)}
          </div>
     </div>
-    </>
+
+</div>
 
     )
 }

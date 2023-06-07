@@ -27,14 +27,16 @@ function findUser(e){
 
 
 return (
-    <div>
+<div className="formContainer">
+    <div className="loginForm">
 
-        <h2>Log in form</h2>
+        <h2>Log in</h2>
 
         <form>
-            <div>
-                <label>Email</label>
+            <div className="fields">
+                <label className="field">Email</label>
                 <input
+                    className="input-field"
                     name='email'
                     value={user.email}
                     onChange={handleInput}
@@ -42,9 +44,10 @@ return (
                 />
             </div>
 
-            <div>
-                <label>Password</label>
+            <div className="fields">
+                <label className="field">Password</label>
                 <input
+                    className="input-field"
                     name='password'
                     type='password'
                     value={user.password}
@@ -53,10 +56,10 @@ return (
                 />
             </div>
 
-            <button onClick={findUser}>Log in</button>
+            <button className="button" onClick={findUser}>Log in</button>
         </form>
     </div>
-
+</div>
 )
 
 }

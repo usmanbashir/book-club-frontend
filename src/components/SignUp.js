@@ -39,14 +39,15 @@ export default function SignUp() {
     }
 
 return(
-
-    <div>
+<div className="formContainer">
+    <div className="signupForm">
         <h2>Sign up form</h2>
 
         <form>
-            <div>
+            <div className="fields">
                 <label>Username</label>
                 <input
+                    className="input-field"
                     name='username'
                     type='text'
                     value={newUser.username}
@@ -56,9 +57,10 @@ return(
                 />
             </div>
 
-            <div>
+            <div className="fields">
                 <label>First Name</label>
                 <input 
+                    className="input-field"
                     name='firstname'
                     type='text'
                     value={newUser.firstname}
@@ -68,9 +70,10 @@ return(
                 />
             </div>
 
-            <div>
+            <div className="fields">
                 <label>Last Name</label>
                 <input
+                    className="input-field"
                     name='lastname'
                     type='text'
                     value={newUser.lastname}
@@ -80,9 +83,10 @@ return(
                 />
             </div>
             
-            <div>
+            <div className="fields">
                 <label>Email</label>
                 <input
+                    className="input-field"
                     name='email'
                     type='email'
                     value={newUser.email}
@@ -92,9 +96,10 @@ return(
                 />
             </div>
 
-            <div>
+            <div className="fields">
                 <label>Password</label>
-                <input                    
+                <input     
+                    className="input-field"               
                     name='password'
                     type='password'
                     value={newUser.password}
@@ -103,13 +108,14 @@ return(
                 />
             </div>
 
-            <button onClick={(e) => {
+            <button className="button" onClick={(e) => {
             submitNewUser(e)
           }}>Sign Up</button>
 
         </form>
 
     </div>
-    
+    </div>
+
 )
 }
