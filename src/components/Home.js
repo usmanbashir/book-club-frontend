@@ -8,9 +8,8 @@ import NewBook from './NewBook'
 import Logout from './Logout'
 import { useNavigate } from 'react-router'
 
-export default function Home(props) {
+export default function Home({isUserLoggedIn}) {
 
-    const isUserLoggedIn = props;
     const navigate = useNavigate()
 
     const [books, setBooks] = useState([])
@@ -58,7 +57,7 @@ return(
     <>
 <button onClick={findUserName}>Click</button>
 
-{!localStorage.getItem("token") ? 
+{!isUserLoggedIn ? 
     <h1>Hello Readers</h1>
     :
     <h1>Hello again</h1>
@@ -71,7 +70,7 @@ return(
 }
 
 {/* If user is logged in, show new book button */}
-{!isUserLoggedIn ? 
+{isUserLoggedIn ? 
     <div className='AddBook'>
         <NewBook />
     </div>

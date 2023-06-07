@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createOneBook } from "../apis/BookApis";
 import { useNavigate } from "react-router";
 
-export default function NewBook() {
+export default function NewBook({isUserLoggedIn}) {
     // debugger;
     const navigate = useNavigate()
 
@@ -47,7 +47,9 @@ export default function NewBook() {
 
     return (
     <>
+    {isUserLoggedIn ? 
         <button onClick={showForm}>Add a book</button>
+    : null}
 
 {addBookForm ? 
         <form>

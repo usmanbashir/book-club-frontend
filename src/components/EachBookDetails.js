@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-export default function EachBookDetails(props) {
-    
-    const {book, isUserLoggedIn} = props;
-    // console.log(book.id)
+export default function EachBookDetails({book, isUserLoggedIn}) {
 
     return(
         // <div>
@@ -16,9 +13,11 @@ export default function EachBookDetails(props) {
                 <div>Genre: {book.genre}</div>
                 <div>Date published: {book.publishedOn}</div>
                 <br></br>
-            {localStorage.getItem("token") ?    
-                <Link to={`/books/${book.id}`}>Show me more!</Link>
-                : null } 
+                
+                {isUserLoggedIn ? 
+                    <Link to={`/books/${book.id}`}>Show me more!</Link>
+                : null}  
+
             </div>
         // </div>
     )
