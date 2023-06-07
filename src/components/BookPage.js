@@ -50,6 +50,7 @@ const bookReviews = () => {
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
+    // findAverageRating()
 }, [reviewList])
 
 // Call the delete book API with the current id as a param. 
@@ -62,14 +63,24 @@ const editFormBtn = () => {
     setShowForm(!showForm)
 }
 
-const [ listRatings, setListRatings] = useState([])
+const [averageRating, setAverageRating] = useState(0)
 
 // Get average rating
-const averageRating = () => {
-    if(reviewList.length > 0) {
-        // reviewList.map((review) => review.rating.reduce((a, b,) => a + parseInt(b), 0) / review.rating.length)}
-        reviewList.map((review) => setListRatings([...listRatings, review.rating]))}
-    console.log(listRatings)
+const findAverageRating = () => {
+
+    if (reviewList.length > 0) {
+        // For each object in the array, 
+        // get the accumulative sum of each rating
+        const sum = reviewList.reduce(function (a, b) {
+            return {rating: a.rating + b.rating}})
+        // console.log(sum)
+
+        const average = ((sum.rating) / reviewList.length).toFixed(2)
+        console.log(average)
+
+        setAverageRating(average)
+        return averageRating
+        }
     }
 
 
@@ -77,8 +88,8 @@ if (!reviewList.length) return "Log in or sign up to see this page!"
 
     return (
         <>
-        {/* <div>Rating: {averageRating}</div> */}
-        <button onClick={averageRating}>CLICK</button>
+        {/* <button onClick={findAverageRating}>Show average rating</button>
+        <div>Average rating: {averageRating}</div> */}
 
         <h1>{singleBook.title}</h1>
         <div>Written by: {singleBook.author}</div>
@@ -89,6 +100,10 @@ if (!reviewList.length) return "Log in or sign up to see this page!"
         <h3>Meeting details</h3>
         <div>Date: {singleBook.meeting_date}</div>
         <div>Location: {singleBook.meeting_location}</div>
+
+        <br></br>
+
+
 
         <br></br>
 
