@@ -50,7 +50,7 @@ const bookReviews = () => {
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
-}, [id])
+}, [reviewList])
 
 // Call the delete book API with the current id as a param. 
 const deleteOneBook = () => {
@@ -62,10 +62,23 @@ const editFormBtn = () => {
     setShowForm(!showForm)
 }
 
+const [ listRatings, setListRatings] = useState([])
+
+// Get average rating
+const averageRating = () => {
+    if(reviewList.length > 0) {
+        // reviewList.map((review) => review.rating.reduce((a, b,) => a + parseInt(b), 0) / review.rating.length)}
+        reviewList.map((review) => setListRatings([...listRatings, review.rating]))}
+    console.log(listRatings)
+    }
+
+
 if (!reviewList.length) return "Log in or sign up to see this page!"
 
     return (
         <>
+        {/* <div>Rating: {averageRating}</div> */}
+        <button onClick={averageRating}>CLICK</button>
 
         <h1>{singleBook.title}</h1>
         <div>Written by: {singleBook.author}</div>

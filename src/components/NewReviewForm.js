@@ -56,12 +56,13 @@ const submitNewReview = (e) => {
 
                 <div>
                     <label>Rating /5</label>
-                    <input 
-                        name="rating"
-                        value={newReview.rating}
-                        onChange={handleInput}
-                        autoComplete="off"
-                    />
+                        <select>
+                            <option value={newReview.rating}>1</option>
+                            <option value={newReview.rating}>2</option>
+                            <option value={newReview.rating}>3</option>
+                            <option value={newReview.rating}>4</option>
+                            <option value={newReview.rating}>5</option>
+                        </select>
                 </div>
 
                 <button onClick={submitNewReview}>Submit my review</button>
