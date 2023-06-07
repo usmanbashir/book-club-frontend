@@ -5,32 +5,26 @@ import Logout from "./Logout";
 export default function NavBar() {
 
     return (
-        <div className="NavBar">
-        &nbsp; | &nbsp;
-        <Link to="/Home">Home</Link>
-        &nbsp; | &nbsp;
-        <div className="LogInBtn">
-           {!localStorage.getItem("token") ? 
-            <Link to="/LogIn">Log In</Link> 
-            : null} 
-        </div>
-        <div className="SignUpBtn">
+        <div class="container-fluid">
+
+            <div class="navbar-brand"><Link to="/">Home</Link></div>
+            
+
+            <div class="nav-link link-success link-offset-2 link-underline-opacity-70 link-underline-opacity-100-hover">
             {!localStorage.getItem("token") ? 
-            <Link to="/SignUp">Sign Up</Link>
-            : null}
-        </div>
-
-        
-
-        {/* <Link to="/books/:id">BOOK</Link> */}
-        &nbsp; | &nbsp;
-        {localStorage.getItem("token") ? 
-        <Logout 
-            isUserLoggedIn={isUserLoggedIn}
-            setIsUserLoggedIn={setIsUserLoggedIn}
-        />
-        : null} 
-        &nbsp; | &nbsp;
+                <Link to="/LogIn">Log In</Link> 
+                : null} 
+            </div>
+            <div class="nav-link">
+                {!localStorage.getItem("token") ? 
+                <Link to="/SignUp">Sign Up</Link>
+                : null}
+            </div>
+            <div class="nav-linklink-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                {localStorage.getItem("token") ? 
+                <Logout />
+                : null}   
+            </div>
 
         </div>
     )

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { createUser } from "../apis/UserApis";
+import { useNavigate } from "react-router";
 
 
 export default function SignUp() {
+
+    const navigate = useNavigate()
 
     const [newUser, setNewUser] = useState({
         username:"", 
@@ -32,6 +35,7 @@ export default function SignUp() {
             email: "",
             password: ""
         })
+        navigate("/login")
     }
 
 return(

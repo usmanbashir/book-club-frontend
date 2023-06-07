@@ -5,7 +5,8 @@ import { getReviews } from "../apis/ReviewApis"
 import EachReview from "./EachReview"
 import EditBookForm from "./EditBookForm"
 
-export default function BookPage() {
+export default function BookPage(props) {
+const isUserLoggedIn = props;
 
 const [ singleBook, setSingleBook ] = useState({})
 const [ editedBook, setEditedBook ] = useState({})
@@ -36,7 +37,7 @@ const bookReviews = () => {
     getReviews(id)
     .then(review => {
         setReviewList(review)
-        console.log("FIRST CLOG ** ", review)
+        // console.log("FIRST CLOG ** ", review)
         // console.log("SECOND CLOG ***  ", reviewList)        
     })
      .catch((error) => console.log(error))
@@ -47,7 +48,7 @@ const bookReviews = () => {
 useEffect(() => { 
     getBook(id) 
     bookReviews(id)
-    // console.log("*****HOW MANY TIMES ******")
+    console.log("*****HOW MANY TIMES ******")
 }, [id])
 
 

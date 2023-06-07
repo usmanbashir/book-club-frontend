@@ -70,3 +70,12 @@ export const removeUserToken = () => {
   // return response.data
 }
 
+export const deleteUser = (id) => {
+  const response = axiosInstance.delete(`http://localhost:4000/signup`, {
+    headers: { "Content-Type": "application/json",
+               "Authorization": localStorage.getItem("token") 
+}
+})  
+    .then(response => console.log(response))
+    .catch((error) => console.log("This is the error: ", error))
+}

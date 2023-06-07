@@ -24,13 +24,13 @@ function App() {
   return (
     <div>
 
-      <div className='NavBar'>
+      <div class="navbar navbar-expand-lg bg-body-tertiary bg-danger-subtle ">
            <NavBar />  </div>
 
       <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/LogIn" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/books/:id" element={<BookPage />} />
       </Routes>
 

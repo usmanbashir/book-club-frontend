@@ -19,8 +19,8 @@ function findUser(e){
     e.preventDefault()
     createUserToken(user)
     console.log(user)
-    setIsUserLoggedIn(true)
-    navigate('/Home')
+    // setIsUserLoggedIn(true)
+    navigate('/')
 }
 
 

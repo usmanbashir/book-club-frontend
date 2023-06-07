@@ -1,12 +1,14 @@
 
 import { getAllBooks } from '../apis/BookApis'
-import { getUser } from '../apis/UserApis'
+import { deleteUser, getUser } from '../apis/UserApis'
 import { useEffect, useState } from "react"
 import "../App.css"
 import EachBookDetails from './EachBookDetails'
 import NewBook from './NewBook'
 
-export default function Home() {
+export default function Home(props) {
+
+    const isUserLoggedIn = props;
 
     const [books, setBooks] = useState([])
     // const [currentUserName, setCurrentUserName] = useState({})
@@ -32,11 +34,15 @@ useEffect(() => {
 // }
 
 // Check through books array for each date, looking for the largest date
-const findCurrentBook = books.reduce((a, b) => {
-    return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
-})
+// const findCurrentBook = books.reduce((a, b) => {
+//     return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
+// })
 
 // console.log(findCurrentBook)
+
+const deleteAccount = () => {
+    deleteUser(parseInt(localStorage.getItem("currentUserId")))
+}
 
 return(
     <>
@@ -46,9 +52,15 @@ return(
     :
     <h1>Hello again</h1>
 }
+{localStorage.getItem("token") ?
+    <button onClick={deleteAccount} 
+            type="button" class="btn btn-outline-dark btn-sm">
+                Delete account</button>
+    : null
+}
 
 {/* If user is logged in, show new book button */}
-{!localStorage.getItem("token") ? 
+{!isUserLoggedIn ? 
     <div className='AddBook'>
         <NewBook />
     </div>
@@ -56,7 +68,8 @@ return(
     
         {/* <div>Current book</div>
         <div>New book</div> */}
-    <div className='Lorem'>
+    <div class="border border-5 border-success 
+            bg-danger-subtle p-4 m-4">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco 
@@ -66,14 +79,15 @@ return(
     sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
 
-    <div> 
+    <div class="container"> 
         <h2>All books</h2>
-        {/* Map over all outputs from above call. */}
-        {books.map((book, index) => <EachBookDetails 
-                book={book} key={book.id} index={index}
-                isUserLoggedIn={isUserLoggedIn} />)}
+        <div class="row row-gap-4">
+            {/* Map over all outputs from above call. */}
+            {books.map((book, index) => <div class="col-md-4"><EachBookDetails 
+                    book={book} key={book.id} index={index}
+                    isUserLoggedIn={isUserLoggedIn} /></div>)}
+         </div>
     </div>
-
     </>
 
     )

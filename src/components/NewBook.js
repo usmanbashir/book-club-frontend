@@ -42,7 +42,7 @@ export default function NewBook() {
             // user_id: localStorage.getItem("currentUserId")
         })
         setAddBookForm(false)
-        navigate()
+        navigate('/')
     }
 
     return (

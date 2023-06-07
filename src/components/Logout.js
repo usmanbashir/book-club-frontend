@@ -4,17 +4,16 @@ import { useNavigate } from "react-router"
 
 export default function Logout () {
 
-    const navigate = useNavigate()
+const navigate = useNavigate()
 
 function logUserOut() {
     console.log("GOODBYEEEEEE *********")
     // console.log(getToken)
     removeUserToken()
-    setIsUserLoggedIn(!isUserLoggedIn)
-    navigate('/Home')
+    navigate('/')
 }
-    return(
+return(
 
-        <button onClick={logUserOut}>Log out</button>
+    <button onClick={logUserOut}>Log out</button>
     )
 }
