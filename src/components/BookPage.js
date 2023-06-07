@@ -4,6 +4,7 @@ import { useParams, useNavigate, Navigate } from "react-router-dom"
 import { getReviews } from "../apis/ReviewApis"
 import EachReview from "./EachReview"
 import EditBookForm from "./EditBookForm"
+import NewReviewForm from "./NewReviewForm"
 
 export default function BookPage(props) {
 const isUserLoggedIn = props;
@@ -34,11 +35,12 @@ const getBook = () => {
 
 // Get reviews for this book.
 const bookReviews = () => {
-    console.log(id)
+    // console.log(id)
     getReviews(id)
     .then(review => {
         let reviewData = JSON.parse(review)
         setReviewList(reviewData)
+        // console.log(reviewData)
     })
      .catch((error) => console.log(error))
 
@@ -95,6 +97,8 @@ if (!reviewList.length) return "Log in or sign up to see this page!"
         <br></br>
 
         <h2>Reviews</h2>
+        <NewReviewForm />
+
         {reviewList.length > 0 ? 
             reviewList.map((review) => 
             <EachReview  review={review} key={review.id} /> 

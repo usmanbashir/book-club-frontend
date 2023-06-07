@@ -62,6 +62,7 @@ return(
     :
     <h1>Hello again {currentUserName.username}</h1>
 }
+
 {localStorage.getItem("token") ?
     <button onClick={deleteAccount} 
             type="button" class="btn btn-outline-dark btn-sm">
@@ -90,7 +91,9 @@ return(
     <br></br>
     <p><strong>Meeting: </strong>{findCurrentBook.meeting_date}</p>
     <p><strong>Location: </strong>{findCurrentBook.meeting_location}</p>
+    {isUserLoggedIn ? 
     <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
+    : null}
 </div>
 
 <div class="border border-5 border-success bg-danger-subtle p-4 m-4">

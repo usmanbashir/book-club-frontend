@@ -13,3 +13,23 @@ export const getReviews = async(id) => {
     return JSON.stringify(response.data)
 }
 
+export const createOneReview = (reviewInfo, id) => {
+
+    const reviewDetails = JSON.stringify({
+        "title": reviewInfo.title,
+        "description": reviewInfo.description,
+        "rating": parseInt(reviewInfo.rating),
+        "user_id": parseInt(localStorage.getItem("currentUserId")),
+        "book_id": parseInt(id)
+    })
+    console.log(reviewDetails)
+
+    const response = axiosInstance.post(`http://localhost:4000/books/${id}/reviews`, reviewDetails, {
+        headers: { "Content-Type": "application/json",
+                    "Authorization": localStorage.getItem("token") 
+        }
+    })
+    .then((response => console.log(response)))    
+
+    return JSON.stringify(response.data)
+}

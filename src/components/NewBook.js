@@ -59,7 +59,7 @@ export default function NewBook({isUserLoggedIn}) {
                 name="title"
                 value={newBook.title}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -69,7 +69,7 @@ export default function NewBook({isUserLoggedIn}) {
                 name="author"
                 value={newBook.author}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -79,7 +79,7 @@ export default function NewBook({isUserLoggedIn}) {
                 name="genre"
                 value={newBook.genre}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -90,7 +90,7 @@ export default function NewBook({isUserLoggedIn}) {
                 name="publishedOn"
                 value={newBook.publishedOn}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -101,7 +101,7 @@ export default function NewBook({isUserLoggedIn}) {
                 name="meeting_date"
                 value={newBook.meeting_date}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
@@ -111,7 +111,7 @@ export default function NewBook({isUserLoggedIn}) {
                 name="meeting_location"
                 value={newBook.meeting_location}
                 onChange={handleInput}
-                authoComplete="off"
+                autoComplete="off"
             />
             </div>
 
