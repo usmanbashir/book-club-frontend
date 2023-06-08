@@ -20,6 +20,7 @@ const { id } = useParams()
 // console.log(id)
 const navigate = useNavigate()
 
+
 const getBook = () => {
     // Call book id to get individual book details using book id. 
     getOneBook(id)
@@ -84,58 +85,63 @@ const findAverage = () => {
 
 if (!reviewList.length) return "Log in or sign up to see this page!"
 
-    return (
-        <>
+return (
+<div className="wholeBook">
 
 
-        <h1>{singleBook.title}</h1>
+        <h1 className="bookTitle">{singleBook.title}</h1>
+
+    <div className="bookDetails">
         <div>Written by: {singleBook.author}</div>
         <div>Genre: {singleBook.genre}</div>
         <div>Published: {singleBook.publishedOn}</div>
         <br></br>
         
-        <button onClick={findAverage}>Show average rating</button>
+        {!showRating ?
+           <button onClick={findAverage} className="btnTwo">Show average rating</button>     
+        : null}
+        
         {showRating ? 
-        <div>{averageRating}/5</div>
+        <div className="rating">{averageRating}/5</div>
         : null}
         
         <br></br>
-        <h3>Meeting details</h3>
+        <br></br>
+
+        <h4>Meeting details</h4>
         <div>Date: {singleBook.meeting_date}</div>
         <div>Location: {singleBook.meeting_location}</div>
 
         <br></br>
+        <div className="bookBtns">
+            <button onClick={deleteOneBook} className="btnTwo">Delete</button>
 
+            <button onClick={editFormBtn} className="btnTwo">Edit</button>
+        </div>
+    </ div>
 
-
-        <br></br>
-
-        <button onClick={deleteOneBook}>Delete</button>
-
-        <br></br>
-
-         <button onClick={editFormBtn}>Edit</button>
-
-         {showForm ? <EditBookForm 
-         singleBook={singleBook}
-         setSingleBook={setSingleBook}
-         editedBook={editedBook}
-         setEditedBook={setEditedBook}
-         id={id} />
+        <div className="formContainer">
+        {showForm ? 
+            <EditBookForm 
+                singleBook={singleBook}
+                setSingleBook={setSingleBook}
+                editedBook={editedBook}
+                setEditedBook={setEditedBook}
+                id={id} />
             : null}
-        
-        <br></br>
-        <br></br>
 
-        <h2>Reviews</h2>
+        </div>
+
+
+    <h2>Reviews</h2>
         <NewReviewForm />
 
         {reviewList.length > 0 ? 
             reviewList.map((review) => 
-            <EachReview  review={review} key={review.id} /> 
+            <EachReview  review={review} id={id} key={review.id} /> 
             ) : null
          }
 
-        </>
+</ div>
     )
 }

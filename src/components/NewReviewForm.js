@@ -2,7 +2,6 @@ import { useParams } from "react-router"
 import { useState } from "react"
 import { createOneReview } from "../apis/ReviewApis"
 
-
 export default function NewReviewForm () {
 
 const {id} = useParams()
@@ -47,7 +46,7 @@ const submitNewReview = (e) => {
 
                 <div>
                     <label>Description</label>
-                    <input 
+                    <textarea
                         name="description"
                         value={newReview.description}
                         onChange={handleInput}
@@ -65,6 +64,8 @@ const submitNewReview = (e) => {
                             <option value="5">5</option>
                         </select>
                 </div>
+
+
 
                 <button onClick={submitNewReview}>Submit my review</button>
 

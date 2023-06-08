@@ -33,3 +33,12 @@ export const createOneReview = (reviewInfo, id) => {
 
     return JSON.stringify(response.data)
 }
+
+export const deleteOneReview = (id, reviewId) => {
+    const response = axiosInstance.delete(`http://localhost:4000/books/${id}/reviews/${reviewId}`, {
+        headers: { "Content-Type": "application/json",
+        "Authorization": localStorage.getItem("token") 
+        }
+        // .then(response => console.log(response))
+    }) 
+}

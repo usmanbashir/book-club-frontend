@@ -74,7 +74,9 @@ return(
                 <p><strong>Meeting: </strong>{findCurrentBook.meeting_date}</p>
                 <p><strong>Location: </strong>{findCurrentBook.meeting_location}</p>
                 {isUserLoggedIn ? 
-                <div><Link to={`/books/${findCurrentBook.id}`}>More</Link></div>
+                <div><Link to={`/books/${findCurrentBook.id}`} 
+                        className='linkBtn'>
+                            More</Link></div>
                 : null}
             </div>
 
@@ -89,7 +91,7 @@ return(
 
 
             <button onClick={deleteAccount} 
-                    type="button" className="deleteBtn">
+                    type="button" className="btnTwo">
             Delete account</button>
         </div>
     : null }

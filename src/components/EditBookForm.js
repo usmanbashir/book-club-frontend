@@ -20,75 +20,83 @@ export default function EditBookForm(props) {
          
     }
 return(
+<div className="signupForm" id="editForm">
+    <h3>Edit book</h3>
 
-    <form>
-            <div>
-            <h3>Edit book</h3>
-            <label>title</label>
-            <input
-                name="title"
-                value={editedBook.title}
-                onChange={handleInput}
-                autoComplete="off"
-            />
+    <form className="editBox">
+
+            <div className="fields">   
+                <label className="field">Title</label>
+                <input
+                    className="input-field"
+                    name="title"
+                    value={editedBook.title}
+                    onChange={handleInput}
+                    autoComplete="off"
+                />
+            </div>
+
+            <div className="editFields">
+                <label className="field">Author</label>
+                <input
+                    className="input-field"
+                    name="author"
+                    value={editedBook.author}
+                    onChange={handleInput}
+                    autoComplete="off"
+                />
+            </div>
+
+            <div className="editFields">
+                <label className="field">Genre</label>
+                <input
+                    className="input-field"
+                    name="genre"
+                    value={editedBook.genre}
+                    onChange={handleInput}
+                    autoComplete="off"
+                />
+            </div>
+
+            <div className="editFields">
+                <label className="field">Published:</label>
+                <input
+                    className="input-field"
+                    type="date"
+                    name="publishedOn"
+                    value={editedBook.publishedOn}
+                    onChange={handleInput}
+                    autoComplete="off"
+                />
+            </div>
+
+            <div className="editFields">
+                <label className="field">Meeting Location</label>
+                <input
+                    className="input-field"
+                    name="meeting_location"
+                    value={editedBook.meeting_location}
+                    onChange={handleInput}
+                    autoComplete="off"
+                />
             </div>
 
             <div>
-            <label>author</label>
-            <input
-                name="author"
-                value={editedBook.author}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Genre</label>
-            <input
-                name="genre"
-                value={editedBook.genre}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Published:</label>
-            <input
-                type="date"
-                name="publishedOn"
-                value={editedBook.publishedOn}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Meeting date</label>
-            <input
-                type="date"
-                name="meeting_date"
-                value={editedBook.meeting_date}
-                onChange={handleInput}
-                autoComplete="off"
-            />
-            </div>
-
-            <div>
-            <label>Meeting Location</label>
-            <input
-                name="meeting_location"
-                value={editedBook.meeting_location}
-                onChange={handleInput}
-                autoComplete="off"
-            />
+                <label className="field">Meeting Date</label>
+                <input
+                    className="input-field"
+                    type="date"
+                    name="meeting_date"
+                    value={editedBook.meeting_date}
+                    onChange={handleInput}
+                    autoComplete="off"
+                />
             </div>
 
             <button onClick={(e) => {
                 submitEditBook(e)
-            }}>Update book</button>
+            }} className="btnTwo">Update book</button>
         </form> 
-
+</div>
 )
 }
