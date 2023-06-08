@@ -11,6 +11,7 @@ import NewBook from './components/NewBook';
 function App() {
 
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
+  const [currentUserId, setCurrentUserId] = useState("")
 
   function isLoggedIn(){
       const getToken = localStorage.getItem("token")
@@ -26,6 +27,8 @@ function App() {
     isLoggedIn()
   }, [])
 
+
+
   return (
     <div>
 
@@ -34,10 +37,13 @@ function App() {
            setIsUserLoggedIn={setIsUserLoggedIn} />  </div>
 
       <Routes>
-        <Route path="/" element={<Home isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/" element={<Home 
+            isUserLoggedIn={isUserLoggedIn} currentUserId={currentUserId} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login isLoggedIn={isLoggedIn}
-            setIsUserLoggedIn={setIsUserLoggedIn} />} />
+            setIsUserLoggedIn={setIsUserLoggedIn}
+            setCurrentUserId={setCurrentUserId}
+            currentUserId={currentUserId} />} />
         <Route path="/books/:id" element={<BookPage />} />
         <Route path="/newbook" element={<NewBook />} />
       </Routes>

@@ -34,7 +34,7 @@ export const createUser = (userInfo) => {
 }
 
 
-export const createUserToken = (userInfo) => {
+export const createUserToken = (userInfo, setCurrentUserId) => {
   
   const userDetails = JSON.stringify({"user": {
     "email": `${userInfo.email}`,
@@ -49,6 +49,7 @@ export const createUserToken = (userInfo) => {
           console.log(response)
           localStorage.setItem("token", response.headers.authorization)
           localStorage.setItem("currentUserId", response.data.data.id)
+          setCurrentUserId(response.data.data.id)
         }
       })
       .catch((error) => console.log(`This is the error: ${error}`))

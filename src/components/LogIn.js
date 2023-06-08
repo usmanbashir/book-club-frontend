@@ -3,7 +3,8 @@ import { createUserToken } from "../apis/UserApis"
 import { useNavigate } from "react-router";
 
 
-export default function Login({isLoggedIn, setIsUserLoggedIn}) {
+export default function Login({
+    isLoggedIn, setIsUserLoggedIn, currentUserId, setCurrentUserId}) {
 
 
     const [user, setUser] = useState({
@@ -18,7 +19,7 @@ function handleInput(e){
 
 function findUser(e){
     e.preventDefault()
-    createUserToken(user)
+    createUserToken(user, setCurrentUserId)
     console.log(user)
     isLoggedIn()
     setIsUserLoggedIn(true)

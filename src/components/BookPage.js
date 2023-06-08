@@ -90,36 +90,36 @@ return (
 
 
         <h1 className="bookTitle">{singleBook.title}</h1>
+    <div className="totalBookDetails">
+        <div className="bookDetails">
+            <div>Written by: {singleBook.author}</div>
+            <div>Genre: {singleBook.genre}</div>
+            <div>Published: {singleBook.publishedOn}</div>
+            <br></br>
+        </div>    
+            {!showRating ?
+            <button onClick={findAverage} className="btnTwo">Show average rating</button>     
+            : null}
+            
+            {showRating ? 
+            <div className="rating">{averageRating}/5</div>
+            : null}
+            
+            <br></br>
+            <br></br>
+        <div className="meetingDetails">
+            <h4>Meeting details</h4>
+            <div>Date: {singleBook.meeting_date}</div>
+            <div>Location: {singleBook.meeting_location}</div>
 
-    <div className="bookDetails">
-        <div>Written by: {singleBook.author}</div>
-        <div>Genre: {singleBook.genre}</div>
-        <div>Published: {singleBook.publishedOn}</div>
-        <br></br>
-        
-        {!showRating ?
-           <button onClick={findAverage} className="btnTwo">Show average rating</button>     
-        : null}
-        
-        {showRating ? 
-        <div className="rating">{averageRating}/5</div>
-        : null}
-        
-        <br></br>
-        <br></br>
+            <br></br>
+            <div className="bookBtns">
+                <button onClick={deleteOneBook} className="btnTwo">Delete</button>
 
-        <h4>Meeting details</h4>
-        <div>Date: {singleBook.meeting_date}</div>
-        <div>Location: {singleBook.meeting_location}</div>
-
-        <br></br>
-        <div className="bookBtns">
-            <button onClick={deleteOneBook} className="btnTwo">Delete</button>
-
-            <button onClick={editFormBtn} className="btnTwo">Edit</button>
+                <button onClick={editFormBtn} className="btnTwo">Edit</button>
+            </div>
         </div>
-    </ div>
-
+    </div>
         <div className="formContainer">
         {showForm ? 
             <EditBookForm 

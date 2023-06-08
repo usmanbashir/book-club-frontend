@@ -8,7 +8,7 @@ import NewBook from './NewBook'
 import { useNavigate } from 'react-router'
 import { Link } from "react-router-dom";
 
-export default function Home({isUserLoggedIn}) {
+export default function Home({isUserLoggedIn, currentUserId}) {
 
     const navigate = useNavigate()
     const [books, setBooks] = useState([])
@@ -22,20 +22,25 @@ useEffect(() => {
         setBooks(data)
         // console.log(data)
     })
-    .catch((error) => error.message)
 
-    if (localStorage.getItem("currentUserId")){
+    .catch((error) => error.message)
+    
+    console.log("Local storage id:", localStorage.getItem("currentUserId"))
+    console.log(!!currentUserId)
+    console.log(isUserLoggedIn)
+
+    if (isUserLoggedIn && currentUserId){
         findUserName()
+        console.log("HELLO BANANAS")
     }
-}, [])
+}, [currentUserId])
 
 // Get current user details and set data into currentUserName state.
 const findUserName = () => {
     // console.log(localStorage.getItem("currentUserId"))
-    getUser(parseInt(localStorage.getItem("currentUserId")))
+    getUser(currentUserId)
     // .then(response => console.log(response))
     .then(response => setCurrentUserName(response))
-
 }
 
 // Check through books array for each date, looking for the largest date

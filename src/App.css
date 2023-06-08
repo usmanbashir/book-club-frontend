@@ -127,6 +127,22 @@ background-color: #FFFDD0;
   border: 0.5rem solid #588157;
 }
 
+.reviewForm {
+  border: 0.3rem solid #588157;
+  width: 25rem;
+  height: 20rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.reviewField {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 /* Buttons */
 
 .button {
@@ -181,22 +197,23 @@ background-color: #FFFDD0;
   align-items: flex-start;
   padding: 1rem;;
 }
-.bookDetails, .reviewContainer {
+.totalBookDetails, .reviewContainer {
+  display: flex;
   background-color: #63A46C;
   border: 0.5rem solid #588157;
-  padding: 1.4rem;
-  width: 40rem;
+  padding: 2rem;
+  width: 38rem;
   font-size: larger;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
 }
-.bookBtns {
-  display: flex;
-  justify-content: flex-end;
+.bookDetails {
+  font-size: 2rem;
 }
 .rating {
+  display: flex;
   text-align: center;
   font-size: 2rem;
   color: #FFFDD0;
@@ -206,7 +223,19 @@ background-color: #FFFDD0;
   justify-content: center;
   align-items: center;
 }
-
+.bookBtns {
+  display: flex;
+  justify-content: flex-end;
+}
+.leaveReview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reviewHeader {
+  padding: 0.3rem;
+}
 
 
 
