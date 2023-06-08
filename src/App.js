@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import SignUp from './components/SignUp';
 import Login from './components/LogIn';
 import BookPage from './components/BookPage';
+import NewBook from './components/NewBook';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/login" element={<Login isLoggedIn={isLoggedIn}
             setIsUserLoggedIn={setIsUserLoggedIn} />} />
         <Route path="/books/:id" element={<BookPage />} />
+        <Route path="/newbook" element={<NewBook />} />
       </Routes>
 
     </div>

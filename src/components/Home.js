@@ -64,16 +64,6 @@ return(
         }  
     </div>
 
-
-
-
-    {/* If user is logged in, show new book button */}
-    { isUserLoggedIn ? 
-        <div className='AddBook'>
-            <NewBook />
-        </div>
-    : null }
-
     <div className="homeDetails">   
         <div className="currentBookContainer">
             <h2 className="currentHeading">Our current book</h2>

@@ -30,6 +30,12 @@ export default function NavBar({isUserLoggedIn, setIsUserLoggedIn}) {
                 <Link to="/SignUp" className="link">Sign Up</Link>
                 : null}
             </div>
+            
+            <div className='AddBook'>
+                {isUserLoggedIn ? 
+                    <Link to="/newbook" className="link" >Add a book</Link>
+                : null}
+            </div>
             <div className="">
                 {isUserLoggedIn ? 
                 <Logout setIsUserLoggedIn={setIsUserLoggedIn} />

@@ -8,10 +8,6 @@ export default function NewBook({isUserLoggedIn}) {
 
     const [ addBookForm, setAddBookForm ] = useState(false)
 
-    const showForm = () => {
-        setAddBookForm(!addBookForm)
-    }
-
     const [ newBook, setNewBook ] = useState({
         title: "",
         author: "",
@@ -47,14 +43,14 @@ export default function NewBook({isUserLoggedIn}) {
 
     return (
     <>
-    {isUserLoggedIn ? 
-        <button onClick={showForm}>Add a book</button>
-    : null}
-
-{addBookForm ? 
         <form>
+            <h1>Add our next book</h1>
+            
+            <br></br>
+
+            <h3>Book details</h3>
             <div>
-            <label>title</label>
+            <label>Title</label>
             <input
                 name="title"
                 value={newBook.title}
@@ -64,7 +60,7 @@ export default function NewBook({isUserLoggedIn}) {
             </div>
 
             <div>
-            <label>author</label>
+            <label>Author</label>
             <input
                 name="author"
                 value={newBook.author}
@@ -94,6 +90,10 @@ export default function NewBook({isUserLoggedIn}) {
             />
             </div>
 
+            <h3>Meeting details</h3>
+
+            <br></br>
+
             <div>
             <label>Meeting date</label>
             <input
@@ -119,7 +119,6 @@ export default function NewBook({isUserLoggedIn}) {
                 submitNewBook(e)
             }}>Create book </button>
         </form>
-        : null} 
     </>
 
     )
