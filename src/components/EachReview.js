@@ -19,7 +19,7 @@ export default function EachReview({review, id}) {
                 <p>Rating: <strong>{review.rating}/5</strong></p>
             </div>
 
-            <button onClick={deleteReview} >DELETE</button>
+            <button onClick={deleteReview} className="btnTwo">DELETE</button>
         </>
 
     )

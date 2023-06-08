@@ -132,16 +132,16 @@ return (
 
         </div>
 
+    <div className="reviewContainer">
+        <h2>Reviews</h2>
+            <NewReviewForm />
 
-    <h2>Reviews</h2>
-        <NewReviewForm />
-
-        {reviewList.length > 0 ? 
-            reviewList.map((review) => 
-            <EachReview  review={review} id={id} key={review.id} /> 
-            ) : null
-         }
-
+            {reviewList.length > 0 ? 
+                reviewList.map((review) => 
+                <EachReview  review={review} id={id} key={review.id} /> 
+                ) : null
+            }
+    </div>
 </ div>
     )
 }

@@ -69,7 +69,7 @@ background-color: #FFFDD0;
 .eachBookDetails {
   margin: 2rem;
   padding: 1.5rem;
-  border: 0.5rem solid #63D471;
+  border: 0.5rem solid #588157;
   background-color: #63A46C;
   width: 16rem;
   height: 15rem;
@@ -137,7 +137,7 @@ background-color: #FFFDD0;
   color: #FFFDD0;
   transition-duration: 0.4s;
 }
-.button:hover {
+.button:hover, .btnTwo:hover {
   background-color: #FFFDD0;
   color: #63A46C;
 }
@@ -150,10 +150,6 @@ background-color: #FFFDD0;
   color: #FFFDD0;
   transition-duration: 0.4s;
 }
-.btnTwo:hover {
-  background-color: #FFFDD0;
-  color: #63A46C;
-}
 
 .linkBtn {
   border: 0.2rem solid #FFFDD0;
@@ -164,7 +160,10 @@ background-color: #FFFDD0;
   text-decoration: none;
   transition-duration: 0.4s;
 }
-
+.linkBtn:hover {
+  background-color: #FFFDD0;
+  color: #63A46C;
+}
 
 /* Each Book Page */
 
@@ -173,11 +172,16 @@ background-color: #FFFDD0;
   background-color: #FFFDD0;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .bookTitle {
+  display: flex;
   font-size: 4rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;;
 }
-.bookDetails {
+.bookDetails, .reviewContainer {
   background-color: #63A46C;
   border: 0.5rem solid #588157;
   padding: 1.4rem;
@@ -189,8 +193,21 @@ background-color: #FFFDD0;
 
 }
 .bookBtns {
-    justify-content: space-around;
+  display: flex;
+  justify-content: flex-end;
 }
+.rating {
+  text-align: center;
+  font-size: 2rem;
+  color: #FFFDD0;
+  border: 0.2rem solid #FFFDD0;
+  width: 10rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 
 

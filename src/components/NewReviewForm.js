@@ -30,7 +30,7 @@ const submitNewReview = (e) => {
     return(
     <>
         <div>review this book
-            <button onClick={showForm}> X </button>
+            <button onClick={showForm} className="btnTwo"> X </button>
         </div>
         {addReviewForm ? 
             <form>
