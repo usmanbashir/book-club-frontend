@@ -30,6 +30,11 @@ function handleInput(e) {
 const submitNewReview = (e) => {
     e.preventDefault()
     createOneReview(newReview, id)
+    setNewReview({
+        title: "",
+        description: "",
+        rating: ""
+    })
 }
 
     return(
@@ -119,20 +124,29 @@ const submitNewReview = (e) => {
       </Form.Group>
 
       <Form.Group className="mb-3">
-            <DropdownButton 
-                    name="rating" 
-                    className="input-field"
-                    onChange={handleInput} 
-                    value={newReview.rating}>
-                <Dropdown.Item value="1">1</Dropdown.Item>
-                <Dropdown.Item value="2">2</Dropdown.Item>
-                <Dropdown.Item value="3">3</Dropdown.Item>
-                <Dropdown.Item value="4">4</Dropdown.Item>
-                <Dropdown.Item value="5">5</Dropdown.Item>
-            </DropdownButton>
+        <Dropdown>
+            <Dropdown.Toggle 
+                        variant="success" 
+                        id="dropdown-basic"
+                        name="rating" 
+                        className="input-field"
+                        key="Rating"
+                        onChange={handleInput} 
+                        value={newReview.rating}>
+                    Rating
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item value="1">1</Dropdown.Item>
+                    <Dropdown.Item value="2">2</Dropdown.Item>
+                    <Dropdown.Item value="3">3</Dropdown.Item>
+                    <Dropdown.Item value="4">4</Dropdown.Item>
+                    <Dropdown.Item value="5">5</Dropdown.Item>
+                </Dropdown.Menu>
+        </Dropdown>
       </Form.Group>
 
-      <Button variant="primary" type="submit" onClick={submitNewReview}>
+      <Button variant="success" type="submit" onClick={submitNewReview}>
         Submit
       </Button>
 

@@ -6,7 +6,7 @@ export default function EachReview({review, id}) {
     const navigate = useNavigate()
 
     const deleteReview = () => {
-        console.log(id, review.title, review.id)
+        // console.log(id, review.title, review.id)
         deleteOneReview(id, review.id)
     }
 
