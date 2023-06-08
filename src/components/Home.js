@@ -31,7 +31,7 @@ useEffect(() => {
 
     if (isUserLoggedIn && currentUserId){
         findUserName()
-        console.log("HELLO BANANAS")
+        // console.log("HELLO BANANAS")
     }
 }, [currentUserId])
 
