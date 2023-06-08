@@ -4,16 +4,7 @@ import Logout from "./Logout";
 
 export default function NavBar({isUserLoggedIn, setIsUserLoggedIn}) {
 
-    // const [ currentToken, setCurrentToken ] = useState({})
-
-    // useEffect(() => {
-    //     setCurrentToken(localStorage.getItem("token"))
-    // }, [currentToken])
-
-    // export const updateToken = () => {
-    //     setCurrentToken(localStorage.getItem("token"))
-    // }
-
+    
     return (
         <div class="NavBar">
 

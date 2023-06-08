@@ -1,16 +1,13 @@
   @import url('https://fonts.googleapis.com/css2?family=Domine&family=Red+Hat+Display&family=Diphylleia&display=swap');
 
-
+.routes {
+    background-color: #FFFDD0;
+}
 /* HOME */
-/* .eachBook {
-  padding: 2rem;
-  margin: 2rem;
-  border: 0.3rem solid #00AF91;
-  width: 15rem;
-  background-color: #FACAB1;
-} */
-.home {
-background-color: #FFFDD0;
+.home, .formContainer {
+  background-color: #FFFDD0;
+  /* height: 100vh;
+  width: 100vw; */
 }
 .homeDetails {
   display:flex
@@ -30,17 +27,17 @@ background-color: #FFFDD0;
   border: 0.5rem solid #588157;
   background-color: #63A46C;
   display: flex-grow;
-  /* font-family: 'Zilla Slab', serif; */
-  /* font-family: 'Red Hat Display', sans-serif; */
   font-family: 'Domine', serif;
   font-size: large;
 }
 .currentHeading {
   font-family: 'Diphylleia', serif;
   margin-bottom: 1rem;
+  background-color: #63A46C;
 }
 .currentBook {
   padding-left: 1rem;
+  background-color: #63A46C;
 }
 
 /* NAVBAR */
@@ -54,6 +51,7 @@ background-color: #FFFDD0;
 }
 .link {
   color: #FFFDD0;
+  background-color: #63A46C;
 }
 
 /* All books */
@@ -95,7 +93,7 @@ background-color: #FFFDD0;
   justify-content: center;
   flex-direction: column;
 }
-.signupForm {
+.signupForm, .newBookForm {
   border: 0.5rem solid #63A46C;
   width: 35rem;
   height: 35rem;
@@ -127,7 +125,9 @@ background-color: #FFFDD0;
   border: 0.5rem solid #588157;
   height: 40rem;
 }
-
+.newBookForm {
+  height: 47rem;
+}
 .reviewForm {
   border: 0.3rem solid #588157;
   width: 25rem;
@@ -161,12 +161,13 @@ background-color: #FFFDD0;
   color: #FFFDD0;
   transition-duration: 0.4s;
 }
-.button:hover, .btnTwo:hover, .deleteBtn:hover, .editBtn:hover, .showFormBtn:hover {
+.button:hover, .btnTwo:hover, .deleteBtn:hover, 
+    .editBtn:hover, .showFormBtn:hover, .deleteReviewBtn:hover {
   background-color: #FFFDD0;
-  color: #63A46C;
+  color: #588157;
 }
 
-.btnTwo, .deleteBtn, .editBtn, .showFormBtn {
+.btnTwo, .deleteBtn, .editBtn, .showFormBtn, .deleteReviewBtn {
   border: 0.2rem solid #FFFDD0;
   padding: 0.2rem 0.7rem;
   margin: 0.5rem;
@@ -180,6 +181,13 @@ background-color: #FFFDD0;
   font-size: small;
   border: 0.1rem solid #FFFDD0;
   margin-left: 0.5rem;
+}
+.deleteReviewBtn {
+  font-size: small;
+  border: 0.1rem solid #FFFDD0;
+  margin-left: 0.5rem;
+  width: 6rem;
+  margin-right: 0.1rem;
 }
 .linkBtn {
   border: 0.2rem solid #FFFDD0;
@@ -215,6 +223,7 @@ background-color: #FFFDD0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Domine', serif;
 }
 .bookTitle {
   display: flex;
@@ -242,6 +251,7 @@ background-color: #FFFDD0;
 }
 .reviewContainer {
   font-size: medium;
+  margin-bottom: 3rem;
 }
 .rating {
   display: flex;
@@ -249,7 +259,7 @@ background-color: #FFFDD0;
   font-size: 2rem;
   color: #FFFDD0;
   border: 0.2rem solid #FFFDD0;
-  width: 10rem;
+  width: 8rem;
   padding: 0.5rem;
   justify-content: center;
   align-items: center;
@@ -263,17 +273,17 @@ background-color: #FFFDD0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 1rem;;
 }
 .reviewHeader {
   padding: 0.3rem;
   font-size: 1.5rem;
   color: #FFFDD0;
 }
-
 .eachReview {
   display: flex;
   background-color: #63A46C;
-  border: 0.2rem solid #588157;
+  border: 0.2rem solid #FFFDD0;
   padding: 1.5rem;
   margin: 1rem;
   width: 30rem;
@@ -288,11 +298,12 @@ background-color: #FFFDD0;
 
 
 
-/* 
-.App {
+/* .App {
   text-align: center;
-}
 
+} */
+
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -326,4 +337,4 @@ background-color: #FFFDD0;
   to {
     transform: rotate(360deg);
   }
-} */
+}  */

@@ -18,7 +18,8 @@ return (
             <p>Rating: <strong>{review.rating}/5</strong></p>
         </div>
 
-        <button onClick={deleteReview} className="deleteBtn">DELETE</button>
+        <button onClick={deleteReview} 
+        type="button" className="deleteReviewBtn">DELETE</button>
     </div>
 
     )

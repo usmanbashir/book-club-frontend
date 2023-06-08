@@ -6,8 +6,6 @@ export default function NewBook({isUserLoggedIn}) {
     // debugger;
     const navigate = useNavigate()
 
-    const [ addBookForm, setAddBookForm ] = useState(false)
-
     const [ newBook, setNewBook ] = useState({
         title: "",
         author: "",
@@ -37,21 +35,23 @@ export default function NewBook({isUserLoggedIn}) {
             meeting_location: "",
             // user_id: localStorage.getItem("currentUserId")
         })
-        setAddBookForm(false)
         navigate('/')
     }
 
-    return (
-    <>
+return (
+
+<div className="formContainer">
+    <div className="newBookForm">
         <form>
             <h1>Add our next book</h1>
             
             <br></br>
 
             <h3>Book details</h3>
-            <div>
-            <label>Title</label>
+            <div className="fields">
+            <label className="field">Title</label>
             <input
+                className="input-field"
                 name="title"
                 value={newBook.title}
                 onChange={handleInput}
@@ -59,9 +59,10 @@ export default function NewBook({isUserLoggedIn}) {
             />
             </div>
 
-            <div>
-            <label>Author</label>
+            <div className="fields">
+            <label className="field">Author</label>
             <input
+                className="input-field"
                 name="author"
                 value={newBook.author}
                 onChange={handleInput}
@@ -69,9 +70,10 @@ export default function NewBook({isUserLoggedIn}) {
             />
             </div>
 
-            <div>
-            <label>Genre</label>
+            <div className="fields">
+            <label className="field">Genre</label>
             <input
+                className="input-field"
                 name="genre"
                 value={newBook.genre}
                 onChange={handleInput}
@@ -79,9 +81,10 @@ export default function NewBook({isUserLoggedIn}) {
             />
             </div>
 
-            <div>
-            <label>Published:</label>
+            <div className="fields">
+            <label className="field">Published:</label>
             <input
+                className="input-field"
                 type="date"
                 name="publishedOn"
                 value={newBook.publishedOn}
@@ -94,9 +97,10 @@ export default function NewBook({isUserLoggedIn}) {
 
             <br></br>
 
-            <div>
-            <label>Meeting date</label>
+            <div className="fields">
+            <label className="field">Meeting date</label>
             <input
+                className="input-field"
                 type="date"
                 name="meeting_date"
                 value={newBook.meeting_date}
@@ -105,9 +109,10 @@ export default function NewBook({isUserLoggedIn}) {
             />
             </div>
 
-            <div>
-            <label>Meeting Location</label>
+            <div className="fields">
+            <label className="field">Meeting Location</label>
             <input
+                className="input-field"
                 name="meeting_location"
                 value={newBook.meeting_location}
                 onChange={handleInput}
@@ -119,7 +124,7 @@ export default function NewBook({isUserLoggedIn}) {
                 submitNewBook(e)
             }}>Create book </button>
         </form>
-    </>
-
+    </div>
+</div>
     )
 }

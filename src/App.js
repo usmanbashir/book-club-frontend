@@ -29,26 +29,28 @@ function App() {
 
 
 
-  return (
-    <div>
+return (
+  <div>
 
       <div>
            <NavBar isUserLoggedIn={isUserLoggedIn}
-           setIsUserLoggedIn={setIsUserLoggedIn} />  </div>
+           setIsUserLoggedIn={setIsUserLoggedIn} />  
+      </div>
 
-      <Routes>
-        <Route path="/" element={<Home 
-            isUserLoggedIn={isUserLoggedIn} currentUserId={currentUserId} />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login isLoggedIn={isLoggedIn}
-            setIsUserLoggedIn={setIsUserLoggedIn}
-            setCurrentUserId={setCurrentUserId}
-            currentUserId={currentUserId} />} />
-        <Route path="/books/:id" element={<BookPage />} />
-        <Route path="/newbook" element={<NewBook />} />
-      </Routes>
-
-    </div>
+      <div className='routes'>
+          <Routes>
+            <Route path="/" element={<Home 
+                isUserLoggedIn={isUserLoggedIn} currentUserId={currentUserId} />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login isLoggedIn={isLoggedIn}
+                setIsUserLoggedIn={setIsUserLoggedIn}
+                setCurrentUserId={setCurrentUserId}
+                currentUserId={currentUserId} />} />
+            <Route path="/books/:id" element={<BookPage />} />
+            <Route path="/newbook" element={<NewBook />} />
+          </Routes>
+      </div>
+  </div>
   );
 }
 
