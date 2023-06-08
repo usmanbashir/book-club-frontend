@@ -36,7 +36,7 @@ return(
                 />
             </div>
 
-            <div className="editFields">
+            <div className="fields">
                 <label className="field">Author</label>
                 <input
                     className="input-field"
@@ -47,7 +47,7 @@ return(
                 />
             </div>
 
-            <div className="editFields">
+            <div className="fields">
                 <label className="field">Genre</label>
                 <input
                     className="input-field"
@@ -58,7 +58,7 @@ return(
                 />
             </div>
 
-            <div className="editFields">
+            <div className="fields">
                 <label className="field">Published:</label>
                 <input
                     className="input-field"
@@ -70,7 +70,7 @@ return(
                 />
             </div>
 
-            <div className="editFields">
+            <div className="fields">
                 <label className="field">Meeting Location</label>
                 <input
                     className="input-field"
@@ -81,7 +81,7 @@ return(
                 />
             </div>
 
-            <div>
+            <div className="fields">
                 <label className="field">Meeting Date</label>
                 <input
                     className="input-field"

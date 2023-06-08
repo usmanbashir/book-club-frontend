@@ -114,9 +114,9 @@ return (
 
             <br></br>
             <div className="bookBtns">
-                <button onClick={deleteOneBook} className="btnTwo">Delete</button>
+                <button onClick={deleteOneBook} className="deleteBtn">Delete</button>
 
-                <button onClick={editFormBtn} className="btnTwo">Edit</button>
+                <button onClick={editFormBtn} className="deleteBtn">Edit</button>
             </div>
         </div>
     </div>
@@ -134,13 +134,14 @@ return (
 
     <div className="reviewContainer">
         <h2>Reviews</h2>
-            <NewReviewForm />
 
             {reviewList.length > 0 ? 
                 reviewList.map((review) => 
                 <EachReview  review={review} id={id} key={review.id} /> 
                 ) : null
             }
+        
+        <NewReviewForm />
     </div>
 </ div>
     )

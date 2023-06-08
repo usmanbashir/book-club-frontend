@@ -125,12 +125,14 @@ background-color: #FFFDD0;
 #editForm {
   background-color: #63A46C;
   border: 0.5rem solid #588157;
+  height: 40rem;
 }
 
 .reviewForm {
   border: 0.3rem solid #588157;
   width: 25rem;
   height: 20rem;
+  padding: 2rem;
   margin: 1rem;
   display: flex;
   align-items: center;
@@ -141,7 +143,13 @@ background-color: #FFFDD0;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  width: 15rem;
 }
+.reviewField label {
+  margin-bottom: 0.5rem;;
+}
+
+
 
 /* Buttons */
 
@@ -153,20 +161,26 @@ background-color: #FFFDD0;
   color: #FFFDD0;
   transition-duration: 0.4s;
 }
-.button:hover, .btnTwo:hover {
+.button:hover, .btnTwo:hover, .deleteBtn:hover, .editBtn:hover, .showFormBtn:hover {
   background-color: #FFFDD0;
   color: #63A46C;
 }
 
-.btnTwo {
+.btnTwo, .deleteBtn, .editBtn, .showFormBtn {
   border: 0.2rem solid #FFFDD0;
   padding: 0.2rem 0.7rem;
+  margin: 0.5rem;
   border-radius: 0.3rem;
   background-color: #63A46C;
   color: #FFFDD0;
   transition-duration: 0.4s;
+  justify-content: flex-end;
 }
-
+.deleteBtn, .editBtn {
+  font-size: small;
+  border: 0.1rem solid #FFFDD0;
+  margin-left: 0.5rem;
+}
 .linkBtn {
   border: 0.2rem solid #FFFDD0;
   padding: 0.3rem 0.7rem;
@@ -179,6 +193,18 @@ background-color: #FFFDD0;
 .linkBtn:hover {
   background-color: #FFFDD0;
   color: #63A46C;
+}
+.reviewBtn {
+  border: 0.2rem solid #588157;
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.3rem;
+  background-color: #FFFDD0;
+  color: #588157;
+  transition-duration: 0.4s;
+}
+.showFormBtn {
+  font-size: 1rem;
+  font-weight: 900;
 }
 
 /* Each Book Page */
@@ -195,13 +221,15 @@ background-color: #FFFDD0;
   font-size: 4rem;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 1rem;;
+  padding: 1rem;
+  font-family: 'Diphylleia', serif;
+
 }
 .totalBookDetails, .reviewContainer {
   display: flex;
   background-color: #63A46C;
   border: 0.5rem solid #588157;
-  padding: 2rem;
+  padding: 2.5rem;
   width: 38rem;
   font-size: larger;
   display: flex;
@@ -210,7 +238,10 @@ background-color: #FFFDD0;
 
 }
 .bookDetails {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.reviewContainer {
+  font-size: medium;
 }
 .rating {
   display: flex;
@@ -235,7 +266,21 @@ background-color: #FFFDD0;
 }
 .reviewHeader {
   padding: 0.3rem;
+  font-size: 1.5rem;
+  color: #FFFDD0;
 }
+
+.eachReview {
+  display: flex;
+  background-color: #63A46C;
+  border: 0.2rem solid #588157;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 30rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 
 

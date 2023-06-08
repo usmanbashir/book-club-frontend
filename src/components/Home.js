@@ -96,7 +96,7 @@ return(
 
 
             <button onClick={deleteAccount} 
-                    type="button" className="btnTwo">
+                    type="button" className="deleteBtn">
             Delete account</button>
         </div>
     : null }
