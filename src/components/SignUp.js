@@ -18,13 +18,11 @@ export default function SignUp() {
     // Add each user input field to the newUser state.
     function handleInput(e) {
         setNewUser({ ...newUser, [e.target.name]: e.target.value })
-        // console.log(e.target.value)
     }
 
 
     function submitNewUser(e){
         e.preventDefault();
-        // console.log(newUser);
         // Send the new user information to the createUser API call.
         createUser(newUser)
         // Set the newUser state to empty.

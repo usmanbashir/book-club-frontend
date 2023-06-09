@@ -2,7 +2,7 @@ import { editOneBook } from "../apis/BookApis"
 
 export default function EditBookForm(props) {
 
-    const {editedBook, setEditedBook, setSingleBook, id} = props;
+    const {editedBook, setEditedBook, setSingleBook, showForm, setShowForm, id} = props;
 
     const handleInput = (e) => {
         setEditedBook({...editedBook, [e.target.name]: e.target.value})
@@ -14,10 +14,9 @@ export default function EditBookForm(props) {
         // Send edited details over to patch API call
         // as well as current book id. Update book with new info.
         editOneBook(editedBook, id)
-        // console.log(editedBook, id)
         // Update singleBook based on the newly updated book.
         setSingleBook(editedBook)
-         
+        setShowForm(!showForm) 
     }
 return(
 <div className="signupForm" id="editForm">

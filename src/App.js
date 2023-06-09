@@ -15,11 +15,11 @@ function App() {
 
   function isLoggedIn(){
       const getToken = localStorage.getItem("token")
-      // console.log(getToken)
       // If there is a token held in local storage, 
       // setIsUserLoggedIn to true.
       if (getToken){
           setIsUserLoggedIn(true)
+          // console.log("YES")
       }
   }
 

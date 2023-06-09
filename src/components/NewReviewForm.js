@@ -40,12 +40,6 @@ const submitNewReview = (e) => {
     return(
 <>
 
-
-{/* label/placeholders */}
-
-
-
-
     <div className="leaveReview">
         <div className="reviewHeader">Leave a review</div>
 

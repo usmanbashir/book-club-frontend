@@ -55,7 +55,7 @@ useEffect(() => {
 // Call the delete book API with the current id as a param. 
 const deleteOneBook = () => {
     deleteBook(id)
-    navigate("/home")
+    navigate("/")
 }
 
 const editFormBtn = () => {
@@ -83,7 +83,7 @@ const findAverage = () => {
         setShowRating(!showRating)
     }
 
-if (!reviewList.length) return "Log in or sign up to see this page!"
+// if (!reviewList.length) return "Log in or sign up to see this page!"
 
 return (
 <div className="wholeBook">
@@ -127,6 +127,8 @@ return (
                 setSingleBook={setSingleBook}
                 editedBook={editedBook}
                 setEditedBook={setEditedBook}
+                setShowForm={setShowForm}
+                showForm={showForm}
                 id={id} />
             : null}
 

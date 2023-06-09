@@ -20,25 +20,25 @@ useEffect(() => {
     .then(books => books.json())
     .then(data => {
         setBooks(data)
-        // console.log(data)
     })
 
     .catch((error) => error.message)
     
-    console.log("Local storage id:", localStorage.getItem("currentUserId"))
-    console.log(!!currentUserId)
-    console.log(isUserLoggedIn)
-
+    // console.log("Local storage id:", localStorage.getItem("currentUserId"))
+    // console.log(!!currentUserId)
+    // console.log(isUserLoggedIn)
+    // if (localStorage.getItem("token")) {
+    //     findUserName()
+    // }
     if (isUserLoggedIn && currentUserId){
         findUserName()
-        // console.log("HELLO BANANAS")
     }
 }, [currentUserId])
 
 // Get current user details and set data into currentUserName state.
 const findUserName = () => {
-    // console.log(localStorage.getItem("currentUserId"))
     getUser(currentUserId)
+    getUser(localStorage.getItem("currentUserId"))
     // .then(response => console.log(response))
     .then(response => setCurrentUserName(response))
 }
@@ -47,9 +47,6 @@ const findUserName = () => {
 const findCurrentBook = books.reduce((a, b) => {
     return new Date(a.meeting_date) > new Date(b.meeting_date) ? a : b
 }, {})
-
-// console.log(findCurrentBook)
-// console.log(currentUserName.firstname)
 
 const deleteAccount = () => {
    

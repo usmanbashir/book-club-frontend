@@ -12,8 +12,7 @@ export default function NewBook({isUserLoggedIn}) {
         genre: "",
         publishedOn: "",
         meeting_date: "",
-        meeting_location: "",
-        // user_id: localStorage.getItem("currentUserId")
+        meeting_location: ""
     })
 
     function handleInput(e) {
@@ -32,8 +31,7 @@ export default function NewBook({isUserLoggedIn}) {
             genre: "",
             publishedOn: "",
             meeting_date: "",
-            meeting_location: "",
-            // user_id: localStorage.getItem("currentUserId")
+            meeting_location: ""
         })
         navigate('/')
     }
