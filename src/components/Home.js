@@ -91,7 +91,7 @@ return(
             <h3>My details</h3>
             <div><strong>Username: </strong>{currentUserName.username}</div>
             <div><strong>First name: </strong>{currentUserName.firstname}</div>
-            <div><strong>Last name: </strong>{currentUserName.firstname}</div>
+            <div><strong>Last name: </strong>{currentUserName.lastname}</div>
             <div><strong>Email: </strong>{currentUserName.email}</div>
 
 

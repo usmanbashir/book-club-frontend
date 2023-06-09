@@ -15,6 +15,6 @@ function logUserOut() {
 }
 return(
 
-    <button onClick={logUserOut}>Log out</button>
+    <button onClick={logUserOut} className="button">Log out</button>
     )
 }
