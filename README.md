@@ -56,13 +56,15 @@ These user stories meant I needed at least two models in the backend: a User mod
 
 The Wireframe:
 
-xxxxxxxxxxxxxxxxxx
+![](/Book-Club-Wireframe.png)
 
 The initial ERD:
 
-xxxxxxxxxxxxxxxxxxxxx
+![](/Book-Club-ERD.png)
 
 I knew that I would definitely need full CRUD on the Book model, and decided that the User model would only have CRD.  This was when I decided on my components and endpoints:
+
+![](/Book-Club-endpoints-components.png)
 
 As I moved deeper into the planning process, I realised I needed a further model which would handle Reviews of books. The integration of this model was planned using notes, rather than adding to the original Excalidraw file. 
 
