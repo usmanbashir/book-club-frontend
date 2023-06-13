@@ -56,7 +56,7 @@ These user stories meant I needed at least two models in the backend: a User mod
 
 The Wireframe:
 
-xxxxxxxxxxxxxxxxxx
+file:///home/catherine/Pictures/Screenshots/Book-Club-Wireframe.png 
 
 The initial ERD:
 
