@@ -55,8 +55,8 @@ AAU, I want to log in to my specific book club group
 These user stories meant I needed at least two models in the backend: a User model and a Book model.
 
 The Wireframe:
-
-![](/Book-Club-Wireframe.png)
+<!-- ![initial wireframe of the project](/home/catherine/sei/projects/Project-4/Book-Club-Wireframe.png) -->
+![](/Book-Club-Wireframe.png) 
 
 The initial ERD:
 
