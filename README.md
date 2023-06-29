@@ -4,6 +4,8 @@
 
 The goal of the fourth and final project on the GA SEI course was to create a full stack application of our own, using any frameworks we wished. This would be the biggest challenge so far as it was up to us to show everything we had learnt throughout the course.
 
+Link to backend repo: https://github.com/Catherinen29/book-club-backend
+
 ### Time frame:
 
 This was a solo project, with a ten day time frame.
@@ -161,12 +163,12 @@ I have a better understanding of user authentication and linking up the front an
 Definitely a general improvement of my skills and understanding of problems.
 
 
-## Key Learnings/Takeaways
+## Takeaways
 I noticed the progression I have made in the way I approach issues now compared to the beginning of the course and appreciate that asking for a fresh set of eyes on the code or someone to discuss the problem with helps with getting to the cause. 
 
 ## Bugs
 
-There are a couple of outstanding bugs in the project at the point of submission:
+There were a couple of outstanding bugs in the project at the point of submission:
 - Although the form fields are set to being required, this is not being enforced. 
 - The average rating of a book doesn’t render on page load - this can only be calculated once the API call has been made to the Review model. 
 
