@@ -4,7 +4,7 @@
 
 The goal of the fourth and final project on the GA SEI course was to create a full stack application of our own, using any frameworks we wished. This would be the biggest challenge so far as it was up to us to show everything we had learnt throughout the course.
 
-Link to backend repo: https://github.com/Catherinen29/book-club-backend
+Backend repo: https://github.com/Catherinen29/book-club-backend
 
 ### Time frame:
 
@@ -158,8 +158,10 @@ This project was definitely a challenge for me, as I had to work with things I h
 
 
 ## Wins
-Other than creating a full stack application by myself, I think the main win from this project was getting through all the errors I faced, big and small.
+I think the main win from this project was getting through all the errors I faced, big and small. My confidence in approaching problems has grown immensely and I feel comfortable in finding the root of a problem
+
 I have a better understanding of user authentication and linking up the front and backend of an application.
+
 Definitely a general improvement of my skills and understanding of problems.
 
 

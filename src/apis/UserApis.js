@@ -4,7 +4,7 @@ import {updateToken} from '../components/NavBar';
 
 export const getUser = async(id) => {
   console.log(id)
-  const response = await axiosInstance.get(`http://localhost:4000/users/${id}`, {
+  const response = await axiosInstance.get(`/${id}`, {
         headers: { "Content-Type": "application/json",
                    "Authorization": localStorage.getItem("token") 
     }
@@ -26,7 +26,7 @@ export const createUser = (userInfo) => {
     }
   })
   console.log(newUser)
-    const response = axiosInstance.post(`http://localhost:4000/signup`, newUser, {
+    const response = axiosInstance.post(`/signup`, newUser, {
         headers: {"Content-Type": "application/json"}})
         .then((response) => console.log(response))
         .catch((error) => console.log(`This is the error: ${error}`))
@@ -41,7 +41,7 @@ export const createUserToken = (userInfo, setCurrentUserId) => {
     "password": `${userInfo.password}`
   }})
   // console.log(userDetails)
-    const response = axiosInstance.post(`http://localhost:4000/login`, userDetails, {
+    const response = axiosInstance.post(`/login`, userDetails, {
       headers: {"Content-Type": "application/json"}})
       // console.log(response.headers)
       .then((response) => {
@@ -61,7 +61,7 @@ export const createUserToken = (userInfo, setCurrentUserId) => {
 export const removeUserToken = () => {
 // Call the destroy session controller using the 
 // saved token which was created when user signed in. 
-  const response = axiosInstance.delete(`http://localhost:4000/logout`, {
+  const response = axiosInstance.delete(`/logout`, {
             headers: { "Content-Type": "application/json",
                         "Authorization": localStorage.getItem("token") 
                       }})
@@ -73,7 +73,7 @@ export const removeUserToken = () => {
 }
 
 export const deleteUser = (id) => {
-  const response = axiosInstance.delete(`http://localhost:4000/signup`, {
+  const response = axiosInstance.delete(`/signup`, {
     headers: { "Content-Type": "application/json",
                "Authorization": localStorage.getItem("token") 
 }

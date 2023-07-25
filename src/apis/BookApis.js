@@ -5,11 +5,11 @@ import axiosInstance from './AxiosInstance';
 //     return response.data
 // }
 export const getAllBooks = () => {
-    return fetch (`http://localhost:4000/books`)
+    return fetch (`/books`)
 }
 
 export const getOneBook = (id) => {
-    return fetch (`http://localhost:4000/books/${id}`)
+    return fetch (`/books/${id}`)
 }
 
 export const createOneBook = (bookInfo) => {
@@ -25,7 +25,7 @@ export const createOneBook = (bookInfo) => {
     })
     console.log(bookDetails)
 
-    const response = axiosInstance.post(`http://localhost:4000/books`, bookDetails, {
+    const response = axiosInstance.post(`/books`, bookDetails, {
         headers: { "Content-Type": "application/json",
         "Authorization": localStorage.getItem("token") 
         }
@@ -48,7 +48,7 @@ export const editOneBook = (bookInfo, id) => {
 
     console.log(bookDetails)
 
-    const response = axiosInstance.patch(`http://localhost:4000/books/${id}`, bookDetails, {
+    const response = axiosInstance.patch(`/books/${id}`, bookDetails, {
         headers: { "Content-Type": "application/json"
         ,
         "Authorization": localStorage.getItem("token") 
@@ -58,7 +58,7 @@ export const editOneBook = (bookInfo, id) => {
 }
 
 export const deleteBook = (id) => {
-    const response = axiosInstance.delete(`http://localhost:4000/books/${id}`, {
+    const response = axiosInstance.delete(`/books/${id}`, {
         headers: { "Content-Type": "application/json",
         "Authorization": localStorage.getItem("token") 
         }

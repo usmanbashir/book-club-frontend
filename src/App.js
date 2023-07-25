@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; 
 import { Routes, Route } from "react-router-dom";
 import Home from './components/Home'
 import NavBar from './components/NavBar';
@@ -37,7 +37,7 @@ return (
            setIsUserLoggedIn={setIsUserLoggedIn} />  
       </div>
 
-      <div className='routes'>
+      <div>
           <Routes>
             <Route path="/" element={<Home 
                 isUserLoggedIn={isUserLoggedIn} currentUserId={currentUserId} />} />

@@ -83,7 +83,7 @@ return(
             </div>
 
         </div>
-    { isUserLoggedIn ?
+    { isUserLoggedIn &&
         <div className="userDetails">
             <h3>My details</h3>
             <div><strong>Username: </strong>{currentUserName.username}</div>
@@ -96,7 +96,7 @@ return(
                     type="button" className="deleteBtn">
             Delete account</button>
         </div>
-    : null }
+    }
     </div> 
 
     <div> 

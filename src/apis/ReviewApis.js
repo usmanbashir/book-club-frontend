@@ -24,7 +24,7 @@ export const createOneReview = (reviewInfo, id) => {
     })
     console.log(reviewDetails)
 
-    const response = axiosInstance.post(`http://localhost:4000/books/${id}/reviews`, reviewDetails, {
+    const response = axiosInstance.post(`/books/${id}/reviews`, reviewDetails, {
         headers: { "Content-Type": "application/json",
                     "Authorization": localStorage.getItem("token") 
         }
@@ -35,7 +35,7 @@ export const createOneReview = (reviewInfo, id) => {
 }
 
 export const deleteOneReview = (id, reviewId) => {
-    const response = axiosInstance.delete(`http://localhost:4000/books/${id}/reviews/${reviewId}`, {
+    const response = axiosInstance.delete(`/books/${id}/reviews/${reviewId}`, {
         headers: { "Content-Type": "application/json",
         "Authorization": localStorage.getItem("token") 
         }
