@@ -4,7 +4,7 @@ import {updateToken} from '../components/NavBar';
 
 export const getUser = async(id) => {
   console.log(id)
-  const response = await axiosInstance.get(`/${id}`, {
+  const response = await axiosInstance.get(`/users/${id}`, {
         headers: { "Content-Type": "application/json",
                    "Authorization": localStorage.getItem("token") 
     }
