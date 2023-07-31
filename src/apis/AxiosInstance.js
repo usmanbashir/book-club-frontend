@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
     baseURL: 
-    process.env.PORT === "production"
+    process.env.NODE_ENV === "production"
         ? "https://secure-gorge-86146-38ded5b1c080.herokuapp.com/"        
         : 
         "http://localhost:4000",
