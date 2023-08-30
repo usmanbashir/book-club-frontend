@@ -6,7 +6,7 @@ export default function NavBar({isUserLoggedIn, setIsUserLoggedIn}) {
 
     
     return (
-        <div class="NavBar">
+        <div className="NavBar">
 
             <div><Link to="/" className="link">Home</Link></div>
             

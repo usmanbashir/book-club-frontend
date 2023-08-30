@@ -101,9 +101,9 @@ return(
 
     <div> 
         <h2 className='allBooksHeader'>All books</h2>
-        <div class="allBooksContainer">
+        <div className="allBooksContainer">
             {/* Map over all outputs from above call. */}
-            {books.map((book, index) => <div><EachBookDetails 
+            {books.map((book, index) => <div key={index}><EachBookDetails 
                     book={book} key={book.id} index={index}
                     isUserLoggedIn={isUserLoggedIn} /></div>)}
          </div>
